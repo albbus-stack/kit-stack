@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "pnpm with-env vite dev",
+		"dev": "pnpm db:generate && pnpm with-env vite dev",
 		"build": "pnpm db:generate && pnpm with-env vite build",
 		"db:generate": "pnpm with-env prisma generate",
 		"db:push": "pnpm with-env prisma db push",
@@ -44,6 +44,7 @@
 		"daisyui": "^3.3.1",
 		"dotenv-cli": "^7.2.1",
 		"prisma": "^5.0.0",
-		"trpc-sveltekit": "^3.5.17"
+		"trpc-sveltekit": "^3.5.17",
+		"zod": "^3.21.4"
 	}
 }

@@ -18,11 +18,11 @@ model Post {
   updatedAt DateTime @updatedAt
   published Boolean  @default(false)
   author    User?    @relation(fields: [authorId], references: [id])
-  authorId  Int?
+  authorId  String?
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
+  id    String  @id
   email String  @unique
   name  String?
   posts Post[]
