@@ -14,7 +14,7 @@ A fullstack starter kit heavily inspired by create-t3-app with some added bonuse
 
 - [x] **TRPC**: Typesafe API Calls 🧹
 
-- [ ] **Supabase Auth**: Authentication 🔐
+- [x] **Supabase Auth**: Authentication 🔐
 
 - [ ] **CI Scripts**: Lint & Deploy 🤖
 

@@ -1,12 +1,10 @@
-import type { Context } from '$lib/trpc/context';
-import { initTRPC } from '@trpc/server';
+import { router } from './trpc';
+import { helloRouter } from './routes/hello';
+import { dbRouter } from './routes/db';
 
-export const t = initTRPC.context<Context>().create();
-
-export const router = t.router({
-	greeting: t.procedure.query(async () => {
-		return `Hello from tRPC @ ${new Date().toLocaleTimeString()}`;
-	})
+export const appRouter = router({
+	hello: helloRouter,
+	db: dbRouter
 });
 
-export type Router = typeof router;
+export type Router = typeof appRouter;
