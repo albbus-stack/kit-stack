@@ -5,11 +5,15 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"db:generate": "pnpm with-env prisma generate",
+		"db:migrate": "pnpm with-env prisma migrate dev",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"with-env": "dotenv -e .env.local --",
+		"sync-env": "pnpm dlx @sveltejs/kit sync"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
@@ -33,9 +37,12 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "5.0.0",
+		"@supabase/auth-helpers-sveltekit": "^0.10.1",
+		"@supabase/supabase-js": "^2.26.0",
 		"@trpc/client": "^10.35.0",
 		"@trpc/server": "^10.35.0",
 		"daisyui": "^3.3.1",
+		"dotenv-cli": "^7.2.1",
 		"prisma": "^5.0.0",
 		"trpc-sveltekit": "^3.5.17"
 	}
