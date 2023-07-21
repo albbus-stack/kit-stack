@@ -6,7 +6,7 @@
 	let greeting = 'Press the button to load data';
 	let loading = false;
 
-	const loadData = async () => {
+	const loadQuery = async () => {
 		loading = true;
 		try {
 			greeting = await trpc($page).db.greeting.query();
@@ -58,7 +58,7 @@
 		role="button"
 		class="btn btn-primary"
 		aria-busy={loading}
-		on:click|preventDefault={loadData}>Load</a
+		on:click|preventDefault={loadQuery}>Load</a
 	>
 	<p>{greeting}</p>
 </div>
