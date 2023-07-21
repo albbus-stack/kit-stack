@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "pnpm with-env vite dev",
-		"build": "pnpm with-env vite build",
+		"build": "pnpm db:generate && pnpm with-env vite build",
 		"db:generate": "pnpm with-env prisma generate",
 		"db:push": "pnpm with-env prisma db push",
 		"db:migrate": "pnpm with-env prisma migrate dev",
@@ -13,8 +13,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"with-env": "dotenv -e .env.local --",
-		"sync-env": "pnpm dlx @sveltejs/kit sync"
+		"with-env": "dotenv -e .env.local --"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
