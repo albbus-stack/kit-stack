@@ -1,6 +1,6 @@
 {
-	"name": "svelte-starter",
-	"version": "0.0.1",
+	"name": "kit-stack",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "pnpm with-env vite dev",

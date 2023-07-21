@@ -1,14 +1,22 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { trpc } from '$lib/trpc/client';
+	import { TRPCClientError } from '@trpc/client';
 
 	let greeting = 'Press the button to load data';
 	let loading = false;
 
 	const loadData = async () => {
 		loading = true;
-		greeting = await trpc($page).db.greeting.query();
-		loading = false;
+		try {
+			greeting = await trpc($page).db.greeting.query();
+		} catch (e) {
+			if (e instanceof TRPCClientError) {
+				greeting = e.message;
+			}
+		} finally {
+			loading = false;
+		}
 	};
 
 	export let data;
