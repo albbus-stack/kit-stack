@@ -10,7 +10,7 @@ A fullstack starter kit heavily inspired by create-t3-app with some added bonuse
 
 - [x] **DaisyUI**: Component Library 🎨
 
-- [ ] **Prisma**: Database ORM 🗃️
+- [x] **Prisma**: Database ORM 🗃️
 
 - [ ] **TRPC**: Typesafe API Calls 🧹
 
