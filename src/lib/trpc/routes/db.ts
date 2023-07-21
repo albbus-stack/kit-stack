@@ -1,11 +1,11 @@
-import { publicProcedure, router } from '../trpc';
+import { protectedProcedure, router } from '../trpc';
 
 export const dbRouter = router({
-	greeting: publicProcedure.query(async ({ ctx }) => {
+	greeting: protectedProcedure.query(async ({ ctx }) => {
 		const { prisma } = ctx;
 		const users = await prisma.user.findMany();
 		console.log(users);
 
-		return `Hello from the db`;
+		return `Hello from the authed db.`;
 	})
 });

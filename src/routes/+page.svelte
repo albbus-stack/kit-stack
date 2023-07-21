@@ -7,7 +7,7 @@
 
 	const loadData = async () => {
 		loading = true;
-		greeting = await trpc($page).hello.greeting.query();
+		greeting = await trpc($page).db.greeting.query();
 		loading = false;
 	};
 
