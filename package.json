@@ -33,7 +33,10 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "5.0.0",
+		"@trpc/client": "^10.35.0",
+		"@trpc/server": "^10.35.0",
 		"daisyui": "^3.3.1",
-		"prisma": "^5.0.0"
+		"prisma": "^5.0.0",
+		"trpc-sveltekit": "^3.5.17"
 	}
 }

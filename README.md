@@ -12,7 +12,7 @@ A fullstack starter kit heavily inspired by create-t3-app with some added bonuse
 
 - [x] **Prisma**: Database ORM 🗃️
 
-- [ ] **TRPC**: Typesafe API Calls 🧹
+- [x] **TRPC**: Typesafe API Calls 🧹
 
 - [ ] **Supabase Auth**: Authentication 🔐
 
