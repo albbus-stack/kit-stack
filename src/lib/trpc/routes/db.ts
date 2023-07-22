@@ -7,6 +7,6 @@ export const dbRouter = router({
 
 		console.log('All Users:', users);
 
-		return `Hello from the authed db.`;
+		return `Hello from the authed db`;
 	})
 });

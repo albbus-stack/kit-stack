@@ -16,9 +16,9 @@ A fullstack starter kit heavily inspired by create-t3-app with some added bonuse
 
 - [x] **Supabase Auth**: Authentication 🔐
 
-- [ ] **CI Scripts**: Lint & Deploy 🤖
+- [x] **Prettier & ESLint**: Code formatting 📃
 
-- [ ] **Cloudflare D1**: Serverless Database 📃
+- [x] **Vercel CI**: Deploy with CI 🤖
 
 - [ ] **Cloudflare pages**: Deployment with <https://kit.svelte.dev/docs/adapter-cloudflare> 🚀
 
@@ -32,7 +32,7 @@ A fullstack starter kit heavily inspired by create-t3-app with some added bonuse
 
 - **UI**: Design system, component library, icons
 
-- **Deployment**: CI scripts, Cloudflare D1, Cloudflare Pages
+- **Deployment**: Easy deployment with CI
 
 ## Getting Started
 
@@ -66,4 +66,4 @@ Tailwind + DaisyUI + Heroicons: <https://github.com/JustinVoitel/svelte-hero-ico
 
 ### 🔐 Supabase Auth
 
-### 📃 Cloudflare D1 & Pages
+### 🤖 Vercel CI
