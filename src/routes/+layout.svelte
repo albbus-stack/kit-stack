@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '@fontsource/montserrat';
 	import '$lib/global.css';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
