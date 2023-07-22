@@ -4,7 +4,8 @@ export const dbRouter = router({
 	greeting: protectedProcedure.query(async ({ ctx }) => {
 		const { prisma } = ctx;
 		const users = await prisma.user.findMany();
-		console.log(users);
+
+		console.log('All Users:', users);
 
 		return `Hello from the authed db.`;
 	})
