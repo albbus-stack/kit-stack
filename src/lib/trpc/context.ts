@@ -1,8 +1,6 @@
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '$lib/db';
 import type { RequestEvent } from '@sveltejs/kit';
 import type { inferAsyncReturnType } from '@trpc/server';
-
-export const prisma = new PrismaClient();
 
 export async function createContext(event: RequestEvent) {
 	const getUser = async () => {

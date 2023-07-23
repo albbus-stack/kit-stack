@@ -1,7 +1,11 @@
 {
 	"name": "kit-stack",
 	"version": "1.0.0",
+	"type": "module",
 	"private": true,
+	"prisma": {
+		"schema": "src/lib/db/prisma/schema.prisma"
+	},
 	"scripts": {
 		"dev": "pnpm db:generate && pnpm with-env vite dev",
 		"build": "pnpm db:generate && pnpm with-env vite build",
@@ -36,7 +40,6 @@
 		"typescript": "^5.0.0",
 		"vite": "^4.4.2"
 	},
-	"type": "module",
 	"dependencies": {
 		"@fontsource/montserrat": "^5.0.5",
 		"@prisma/client": "5.0.0",

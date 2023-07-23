@@ -10,7 +10,7 @@ A fullstack starter kit heavily inspired by create-t3-app with some added bonuse
 
 - [x] **Prisma**: Database ORM 🗃️
 
-- [x] **TRPC**: Typesafe API Calls 🧹
+- [x] **tRPC**: Typesafe API Calls 🧹
 
 - [x] **Supabase Auth**: Authentication 🔐
 
@@ -38,39 +38,44 @@ A fullstack starter kit heavily inspired by create-t3-app with some added bonuse
 
 ## Getting Started
 
-Run the following commands in your terminal to clone the starter and create a new empty repo:
+Run the following commands in your terminal to clone the starter, create a new repo and install the dependencies:
 
 ```bash
 git clone https://github.com/albbus-stack/kit-stack.git
 cd kit-stack && rm -rf .git
 git init
+pnpm install
 ```
 
 ### Configure Supabase Auth & Prisma
 
 Rename the `.env.local.example` file to `.env.local`, this is where you will store your environment variables. You can use it in the future for any other pnpm script with `pnpm with-env <script>`.
 
-Sync it with `pnpm sync-env` to generate the types for the environment variables.
+❗ Sync with `pnpm sync-env` to generate the types for the environment variables.
 
 Fill in `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` with your `Project URL` and Supabase credentials. You can find both of them in your Supabase Dashboard under `Project Settings > API > Project API keys`.
 
-Fill in `DATABASE_URL` with the connection string under `Project Settings > Database > Connection string`. Make sure you insert the correct database password into the string.
+You can use any postgres database for this step but my recommendations are Supabase, Railway or Heroku.
+
+Fill in `DATABASE_URL` with the connection string under `Project Settings > Database > Connection string > URI`. Make sure you insert the correct database password into the string or reset it on the same page.
+
+❗ You also have to change the `provider` to `postgresql` in the `schema.prisma` file, it is currently set to `sqlite` to provide a faster development experience on your local machine.
+
+Once you are done with the configuration, run `pnpm db:push` to create the database tables on your server. For any future changes to the database schema, you can run `pnpm db:migrate` to generate a new migration file while preserving the data, then `pnpm db:push` to push the changes.
 
 ### Configure Vercel
 
 Head over to <https://vercel.com> and create an account. Then install the Vercel CLI:
 
 ```bash
-pnpm i -g vercel
+pnpm install -g vercel
 ```
 
 Run `vercel login` and then `vercel .` from the root of the project to deploy your app using the preconfigured commands.
 
+Alternatively, you can use the Vercel GitHub integration to deploy your app straight from your uploaded repo.
+
 ## Behind the design
-
-### 📦 Pnpm
-
-By using pnpm we can take advantage of the workspaces feature to create a monorepo. This allows us to share code between the frontend and backend.
 
 ### 🛠️ Svelte-Kit
 
@@ -80,10 +85,18 @@ This cuts out the need for a state management dependency and provides a faster a
 
 Tailwind + DaisyUI + Heroicons: <https://github.com/JustinVoitel/svelte-hero-icons> + Fontsource
 
-### 🗃️ Prisma
+### 🧹 Prisma + tRPC
 
-### 🧹 TRPC
+TODO: Add tRPC CRUD operations for the user model.
+
+TODO: Add `prisma migrate deploy` for the vercel CI and use `prisma migrate dev` to generate the local migration file.
 
 ### 🔐 Supabase Auth
+
+TODO: Add JWT validation to the tRPC server to reduce the number of requests to the Supabase API.
+
+### 📝 Felte
+
+TODO: Add form validation and submission example to the signup & login forms.
 
 ### 🤖 Vercel
