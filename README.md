@@ -1,26 +1,30 @@
 # kit-stack
 
-A fullstack starter kit heavily inspired by create-t3-app with some added bonuses.
+<center>
+    <img src="https://svgshare.com/i/vcw.svg" height="200"/>
+    </br> </br>
+    A fullstack starter kit heavily inspired by <a href="https://create.t3.gg/">create-t3-app</a> with some added bonuses
+</center>
 
 ## The Kit Stack
 
-- [x] **Pnpm**: Package manager 📦
+📦 **Pnpm**: Package manager
 
-- [x] **SvelteKit**: Fullstack framework 🛠️
+🛠️ **SvelteKit**: Fullstack framework
 
-- [x] **Prisma**: Database ORM 🗃️
+🗃️ **Prisma**: Database ORM
 
-- [x] **tRPC**: Typesafe API Calls 🧹
+🧹 **tRPC**: Typesafe API Calls
 
-- [x] **Supabase Auth**: Authentication 🔐
+🔐 **Supabase Auth**: Authentication
 
-- [x] **DaisyUI**: Component Library 🎨
+🎨 **DaisyUI**: Component Library
 
 - [ ] **Felte**: Form Validation 📝
 
-- [x] **Prettier & ESLint**: Code formatting 📃
+📃 **Prettier & ESLint**: Code formatting
 
-- [x] **Vercel**: Deploy with CI 🤖
+🤖 **Vercel**: Deploy with CI
 
 ## Features
 
@@ -49,15 +53,15 @@ pnpm install
 
 ### Configure Supabase Auth & Prisma
 
-1. Rename the `.env.local.example` file to `.env.local`, this is where you will store your environment variables. You can use it in the future for any other pnpm script with `pnpm with-env <script>`.
+1. Rename the `.env.local.example` file to `.env.local`, this is where you will store your environment variables.
 
-❗ Sync with `pnpm env:sync` to generate the types for the environment variables.
+2. Sync with `pnpm env:sync` to generate the types for the environment variables.
 
-2. Fill in `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` with your `Project URL` and Supabase credentials. You can find both of them in your Supabase Dashboard under `Project Settings > API > Project API keys`, linked [here](https://supabase.com/dashboard/project/_/settings/api).
+3. Fill in `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` with your `Project URL` and Supabase credentials. You can find both of them in your Supabase Dashboard under `Project Settings > API > Project API keys`, linked [here](https://supabase.com/dashboard/project/_/settings/api).
 
 You can use any postgres database for the next step but my recommendations are Supabase, Railway, Heroku or Vercel.
 
-3. Fill in `DATABASE_URL` with the connection string under `Project Settings > Database > Connection string > URI`, linked [here](https://supabase.com/dashboard/project/_/settings/database). Make sure you insert the correct database password into the string or reset it on the same page.
+4. Fill in `DATABASE_URL` with the connection string under `Project Settings > Database > Connection string > URI`, linked [here](https://supabase.com/dashboard/project/_/settings/database). Make sure you insert the correct database password into the string or reset it on the same page.
 
 In a local evironment is preferable that you use a local postgres database, you can install postgres [here](https://www.postgresql.org/download/) and use the default `postgres` user with the password that you set during the installation. The connection string in this case would look like this:
 
@@ -65,7 +69,7 @@ In a local evironment is preferable that you use a local postgres database, you 
 postgresql://postgres:password@localhost:5432/postgres
 ```
 
-4. Once you are done with the configuration, run `pnpm db:push` to create the database tables on your server. For any future changes to the database schema, you can run `pnpm db:migrate` to generate a new migration file while preserving the data, then `pnpm db:push` to push the changes.
+5. Once you are done with the configuration, run `pnpm db:push` to create the database tables on your server. For any future changes to the database schema, you can run `pnpm db:migrate` to generate a new migration file while preserving the data, then `pnpm db:push` to push the changes.
 
 ### Configure Vercel
 
@@ -77,7 +81,9 @@ pnpm install -g vercel
 
 Run `vercel login` and then `vercel .` from the root of the project to deploy your app using the preconfigured commands.
 
-Alternatively, you can use the Vercel GitHub integration to deploy your app straight from your uploaded repo.
+Alternatively, you can use the [Vercel GitHub](https://vercel.com/docs/git-integrations) integration to deploy your app straight from your uploaded repo everytime you push to the `main` branch.
+
+To set it up just create a new project on Vercel using the `Import Git repository` option and follow the instructions, all the proper commands are already configured so you don't have to do anything else.
 
 ## Behind the design
 
@@ -92,8 +98,6 @@ Tailwind + DaisyUI + Heroicons: <https://github.com/JustinVoitel/svelte-hero-ico
 ### 🧹 Prisma + tRPC
 
 TODO: Add tRPC CRUD operations for the user model.
-
-TODO: Add `prisma migrate deploy` for the vercel CI and use `prisma migrate dev` to generate the local migration file.
 
 ### 🔐 Supabase Auth
 

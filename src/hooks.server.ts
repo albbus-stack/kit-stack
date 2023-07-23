@@ -8,7 +8,7 @@ import { createSupabaseServerClient } from '@supabase/auth-helpers-sveltekit';
 
 const trpc: Handle = createTRPCHandle({ router: appRouter, createContext });
 
-export const supabase: Handle = async ({ event, resolve }) => {
+const supabaseAuth: Handle = async ({ event, resolve }) => {
 	event.locals.supabase = createSupabaseServerClient({
 		supabaseUrl: PUBLIC_SUPABASE_URL,
 		supabaseKey: PUBLIC_SUPABASE_ANON_KEY,
@@ -34,4 +34,4 @@ export const supabase: Handle = async ({ event, resolve }) => {
 	});
 };
 
-export const handle: Handle = sequence(supabase, trpc);
+export const handle: Handle = sequence(supabaseAuth, trpc);
