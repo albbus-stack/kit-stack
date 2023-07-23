@@ -36,7 +36,7 @@
 	};
 </script>
 
-<div class="card flex-row gap-10">
+<div class="card flex-col gap-10 sm:flex-row">
 	<div class="card min-w-[250px] flex-col items-center gap-5">
 		<a
 			href="#load"

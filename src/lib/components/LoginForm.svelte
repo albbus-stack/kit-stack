@@ -46,12 +46,17 @@
 	};
 </script>
 
-<div class="card mt-20 items-center p-5">
+<div class="card items-center p-5">
 	<h6 class="mb-8 text-xl font-bold">{title}</h6>
 	{#if type !== 'signout'}
 		<form class="card items-center gap-4" on:submit={handleSignUp}>
-			<input name="email" bind:value={email} class="input border-white/50" />
-			<input type="password" name="password" bind:value={password} class="input border-white/50" />
+			<input name="email" bind:value={email} class="input border-black/50 dark:border-white/50" />
+			<input
+				type="password"
+				name="password"
+				bind:value={password}
+				class="input border-black/50 dark:border-white/50"
+			/>
 			<div class="mt-5 flex flex-col gap-5 sm:flex-row">
 				{#if type === 'signup' || type === 'demo'}
 					<button class="btn btn-primary">Sign up</button>

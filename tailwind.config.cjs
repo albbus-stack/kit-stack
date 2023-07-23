@@ -4,5 +4,20 @@ export default {
 	theme: {
 		extend: {}
 	},
-	plugins: [require('daisyui')]
+	plugins: [require('daisyui')],
+	daisyui: {
+		themes: [
+			{
+				light: {
+					...require('daisyui/src/theming/themes')['[data-theme=light]'],
+					primary: '#f5602f',
+					'primary-content': '#ffffff'
+				},
+				dark: {
+					...require('daisyui/src/theming/themes')['[data-theme=dark]'],
+					primary: '#f5602f'
+				}
+			}
+		]
+	}
 };
