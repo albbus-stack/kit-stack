@@ -7,18 +7,21 @@
 		"schema": "src/lib/db/prisma/schema.prisma"
 	},
 	"scripts": {
-		"dev": "pnpm db:generate && pnpm with-env vite dev",
-		"build": "pnpm db:generate && pnpm with-env vite build",
+		"dev": "pnpm db:generate && pnpm vite:dev",
+		"build": "pnpm db:generate && pnpm vite:build",
+		"vite:dev": "pnpm with-env vite dev",
+		"vite:build": "pnpm with-env vite build",
 		"db:generate": "pnpm with-env prisma generate",
 		"db:push": "pnpm with-env prisma db push",
 		"db:migrate": "pnpm with-env prisma migrate dev",
+		"db:deploy": "pnpm with-env prisma migrate deploy",
+		"db:studio": "pnpm with-env prisma studio",
 		"preview": "pnpm with-env vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"with-env": "dotenv -e .env.local --",
-		"sync-env": "pnpm check"
+		"env:sync": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"vercel:build": "pnpm db:generate && pnpm db:deploy && pnpm vite:build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",

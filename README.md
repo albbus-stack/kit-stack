@@ -49,19 +49,23 @@ pnpm install
 
 ### Configure Supabase Auth & Prisma
 
-Rename the `.env.local.example` file to `.env.local`, this is where you will store your environment variables. You can use it in the future for any other pnpm script with `pnpm with-env <script>`.
+1. Rename the `.env.local.example` file to `.env.local`, this is where you will store your environment variables. You can use it in the future for any other pnpm script with `pnpm with-env <script>`.
 
-❗ Sync with `pnpm sync-env` to generate the types for the environment variables.
+❗ Sync with `pnpm env:sync` to generate the types for the environment variables.
 
-Fill in `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` with your `Project URL` and Supabase credentials. You can find both of them in your Supabase Dashboard under `Project Settings > API > Project API keys`.
+2. Fill in `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` with your `Project URL` and Supabase credentials. You can find both of them in your Supabase Dashboard under `Project Settings > API > Project API keys`, linked [here](https://supabase.com/dashboard/project/_/settings/api).
 
-You can use any postgres database for this step but my recommendations are Supabase, Railway or Heroku.
+You can use any postgres database for the next step but my recommendations are Supabase, Railway, Heroku or Vercel.
 
-Fill in `DATABASE_URL` with the connection string under `Project Settings > Database > Connection string > URI`. Make sure you insert the correct database password into the string or reset it on the same page.
+3. Fill in `DATABASE_URL` with the connection string under `Project Settings > Database > Connection string > URI`, linked [here](https://supabase.com/dashboard/project/_/settings/database). Make sure you insert the correct database password into the string or reset it on the same page.
 
-❗ You also have to change the `provider` to `postgresql` in the `schema.prisma` file, it is currently set to `sqlite` to provide a faster development experience on your local machine.
+In a local evironment is preferable that you use a local postgres database, you can install postgres [here](https://www.postgresql.org/download/) and use the default `postgres` user with the password that you set during the installation. The connection string in this case would look like this:
 
-Once you are done with the configuration, run `pnpm db:push` to create the database tables on your server. For any future changes to the database schema, you can run `pnpm db:migrate` to generate a new migration file while preserving the data, then `pnpm db:push` to push the changes.
+```bash
+postgresql://postgres:password@localhost:5432/postgres
+```
+
+4. Once you are done with the configuration, run `pnpm db:push` to create the database tables on your server. For any future changes to the database schema, you can run `pnpm db:migrate` to generate a new migration file while preserving the data, then `pnpm db:push` to push the changes.
 
 ### Configure Vercel
 
@@ -93,7 +97,7 @@ TODO: Add `prisma migrate deploy` for the vercel CI and use `prisma migrate dev`
 
 ### 🔐 Supabase Auth
 
-TODO: Add JWT validation to the tRPC server to reduce the number of requests to the Supabase API.
+TODO: Add JWT validation to the tRPC server to reduce the number of requests to the Supabase API??
 
 ### 📝 Felte
 
