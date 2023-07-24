@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '@fontsource/montserrat';
+	import '@fontsource/montserrat-alternates';
 	import '$lib/global.css';
 
 	import { invalidate } from '$app/navigation';

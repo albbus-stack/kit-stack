@@ -14,6 +14,9 @@ dependencies:
   '@fontsource/montserrat':
     specifier: ^5.0.5
     version: 5.0.5
+  '@fontsource/montserrat-alternates':
+    specifier: ^5.0.5
+    version: 5.0.5
   '@prisma/client':
     specifier: 5.0.0
     version: 5.0.0(prisma@5.0.0)
@@ -365,6 +368,10 @@ packages:
     dependencies:
       '@felte/common': 1.1.7
       zod: 3.21.4
+    dev: false
+
+  /@fontsource/montserrat-alternates@5.0.5:
+    resolution: {integrity: sha512-n8+wzbkrUxjYWERSdEbiPwNly6kkHEMbXxTc7hXlNWZVYITwMtkzw/0iQIWhkONph6blW24Lzr/wBMyVuSF84g==}
     dev: false
 
   /@fontsource/montserrat@5.0.5:

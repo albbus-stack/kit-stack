@@ -20,7 +20,7 @@
 
 🎨 **DaisyUI**: Component Library
 
-📝 - [ ] **Felte**: Form Validation
+📝 **Felte**: Form Validation
 
 📃 **Prettier & ESLint**: Code formatting
 
@@ -117,8 +117,6 @@ This cuts out the need for a state management dependency and provides a faster a
 
 Tailwind + DaisyUI + Heroicons: <https://github.com/JustinVoitel/svelte-hero-icons> + Fontsource
 
-TODO: change included font to Montserrat Alternates
-
 ### 🧹 Prisma + tRPC
 
 TODO: Add tRPC CRUD operations for the user model.
@@ -128,7 +126,5 @@ TODO: Add tRPC CRUD operations for the user model.
 TODO: Add JWT validation to the tRPC server to reduce the number of requests to the Supabase API??
 
 ### 📝 Felte
-
-TODO: Add form validation and submission example to the signup & login forms.
 
 ### 🤖 Vercel
