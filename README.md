@@ -1,14 +1,14 @@
-# kit-stack
-
-<center>
-    <img src="https://svgshare.com/i/vcw.svg" height="200"/>
+<p align="center">
+    <img src="https://svgshare.com/i/vcw.svg" height="250"/>
     </br> </br>
-    A fullstack starter kit heavily inspired by <a href="https://create.t3.gg/">create-t3-app</a> with some added bonuses
-</center>
+    A fullstack starter kit heavily inspired by <a href="https://create.t3.gg/">create-t3-app</a> with variuos added bonuses
+    </br> </br>
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>&nbsp;&nbsp;
+    <img src="https://img.shields.io/badge/Supabase-2A9D69?style=for-the-badge&logo=supabase&logoColor=white"/>&nbsp;&nbsp;
+    <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>&nbsp;&nbsp;
+</p>
 
 ## The Kit Stack
-
-📦 **Pnpm**: Package manager
 
 🛠️ **SvelteKit**: Fullstack framework
 
@@ -20,7 +20,7 @@
 
 🎨 **DaisyUI**: Component Library
 
-- [ ] **Felte**: Form Validation 📝
+📝 - [ ] **Felte**: Form Validation
 
 📃 **Prettier & ESLint**: Code formatting
 
@@ -38,7 +38,7 @@
 
 - **Forms**: Form validation, form submission, form errors
 
-- **Deployment**: Easy deployment with CI
+- **Deployment**: Easy and fast deployments with CI including database migrations
 
 ## Getting Started
 
@@ -51,27 +51,49 @@ git init
 pnpm install
 ```
 
-### Configure Supabase Auth & Prisma
+### Development
+
+#### Configure Supabase Auth
 
 1. Rename the `.env.local.example` file to `.env.local`, this is where you will store your environment variables.
 
-2. Sync with `pnpm env:sync` to generate the types for the environment variables.
+2. Generate the types for the environment variables:
+
+```bash
+pnpm env:sync
+```
 
 3. Fill in `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` with your `Project URL` and Supabase credentials. You can find both of them in your Supabase Dashboard under `Project Settings > API > Project API keys`, linked [here](https://supabase.com/dashboard/project/_/settings/api).
 
-You can use any postgres database for the next step but my recommendations are Supabase, Railway, Heroku or Vercel.
+#### Configure Prisma
 
-4. Fill in `DATABASE_URL` with the connection string under `Project Settings > Database > Connection string > URI`, linked [here](https://supabase.com/dashboard/project/_/settings/database). Make sure you insert the correct database password into the string or reset it on the same page.
+For this step you can use any postgres database; my recommendations are Supabase, Vercel, Railway or Heroku.
 
-In a local evironment is preferable that you use a local postgres database, you can install postgres [here](https://www.postgresql.org/download/) and use the default `postgres` user with the password that you set during the installation. The connection string in this case would look like this:
+1. Fill in `DATABASE_URL` with your connection string. In a local evironment is preferable that you use a local postgres database, you can install postgres from [here](https://www.postgresql.org/download/) and use the default `postgres` user with the password you set during the installation. The connection string in this case would look like this:
 
 ```bash
 postgresql://postgres:password@localhost:5432/postgres
 ```
 
-5. Once you are done with the configuration, run `pnpm db:push` to create the database tables on your server. For any future changes to the database schema, you can run `pnpm db:migrate` to generate a new migration file while preserving the data, then `pnpm db:push` to push the changes.
+For the final deployment if you use Supabase you can find this URL under `Project Settings > Database > Connection string > URI`, linked [here](https://supabase.com/dashboard/project/_/settings/database). Make sure you insert the correct database password into the string, you can reset it on the same page.
 
-### Configure Vercel
+2. Once you are done with the configuration, create the database tables on your local postgres server:
+
+```bash
+pnpm db:push
+```
+
+For any future changes to the database schema, you can run `pnpm db:migrate` to generate a new migration file while preserving the data, then Vercel will automatically run `pnpm db:deploy` on the server to apply the changes for every commit.
+
+3. Finally, start the development server:
+
+```bash
+pnpm dev
+```
+
+### Production
+
+#### Configure Vercel
 
 Head over to <https://vercel.com> and create an account. Then install the Vercel CLI:
 
@@ -94,6 +116,8 @@ This cuts out the need for a state management dependency and provides a faster a
 ### 🎨 DaisyUI
 
 Tailwind + DaisyUI + Heroicons: <https://github.com/JustinVoitel/svelte-hero-icons> + Fontsource
+
+TODO: change included font to Montserrat Alternates
 
 ### 🧹 Prisma + tRPC
 

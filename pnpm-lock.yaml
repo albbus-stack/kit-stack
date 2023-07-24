@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@felte/reporter-svelte':
+    specifier: ^1.1.10
+    version: 1.1.10(svelte@4.1.1)
+  '@felte/validator-zod':
+    specifier: ^1.0.16
+    version: 1.0.16(zod@3.21.4)
   '@fontsource/montserrat':
     specifier: ^5.0.5
     version: 5.0.5
@@ -29,6 +35,9 @@ dependencies:
   dotenv-cli:
     specifier: ^7.2.1
     version: 7.2.1
+  felte:
+    specifier: ^1.2.11
+    version: 1.2.11(svelte@4.1.1)
   prisma:
     specifier: ^5.0.0
     version: 5.0.0
@@ -325,6 +334,38 @@ packages:
     resolution: {integrity: sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@felte/common@1.1.7:
+    resolution: {integrity: sha512-vnm3Y4TBuldpfN1XojSWk3XNPrRNQUccIPsWTMgLnm+HWqC7DiRR2mDAjr7Ro0Qv5dZWNaakPhftZJbDW5F/iQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
+
+  /@felte/core@1.4.0:
+    resolution: {integrity: sha512-1HDhk64MaeWQ1FD7BzhNLiA/I4+/glBbfI5WSPa5zFAuQoQ6rPArW3KyFiFoIWxSiUPXrQeVd3E8dwMEOYOGrQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@felte/common': 1.1.7
+    dev: false
+
+  /@felte/reporter-svelte@1.1.10(svelte@4.1.1):
+    resolution: {integrity: sha512-WxNnbXOm/e2h3LS+vvBoDKQJ6Gs0HQ4pvxohXJTZUUKMW9fRA3c13v5e4xy54sCnta7h9IRbNrN89mGJVROHoA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      svelte: ^3.31.0 || ^4.0.0
+    dependencies:
+      '@felte/common': 1.1.7
+      svelte: 4.1.1
+    dev: false
+
+  /@felte/validator-zod@1.0.16(zod@3.21.4):
+    resolution: {integrity: sha512-fx6cVCt9AfJvKqlMPXXcwG4hjdxsdj8Z9vIyJvEgg37QkqZ2FySHbU+aAaYDJQ2tSvy+h2VPrlp+xBUW2wJmxQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      zod: ^3.2.0
+    dependencies:
+      '@felte/common': 1.1.7
+      zod: 3.21.4
+    dev: false
 
   /@fontsource/montserrat@5.0.5:
     resolution: {integrity: sha512-kR4hwC44p0GZQsy1oA2X8EdFMg/lC7qwVX9jNgNBQ+uSZXKoV4Vyc1VepcRAcGRKPIgcc/3OC1j7FNQDYpFLJA==}
@@ -1441,6 +1482,16 @@ packages:
     resolution: {integrity: sha512-wBrocU2LCXXa+lWBt8RoIRD89Fi8OdABODa/kEnyeyjS5aZO5/GNvI5sEINADqP/h8M29UHTHUb53sUu5Ihqdw==}
     dependencies:
       reusify: 1.0.4
+
+  /felte@1.2.11(svelte@4.1.1):
+    resolution: {integrity: sha512-GkuEo3IxUDe8MWKtLgCaSQvN47qcch8a21qtFqNNbYYcXrPrb+GgyqngjGI2Vk32Uk5Gz3O8Ja49ZcAX2XubsA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      svelte: ^3.31.0 || ^4.0.0
+    dependencies:
+      '@felte/core': 1.4.0
+      svelte: 4.1.1
+    dev: false
 
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}

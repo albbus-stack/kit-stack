@@ -44,6 +44,8 @@
 		"vite": "^4.4.2"
 	},
 	"dependencies": {
+		"@felte/reporter-svelte": "^1.1.10",
+		"@felte/validator-zod": "^1.0.16",
 		"@fontsource/montserrat": "^5.0.5",
 		"@prisma/client": "5.0.0",
 		"@supabase/auth-helpers-sveltekit": "^0.10.1",
@@ -52,6 +54,7 @@
 		"@trpc/server": "^10.35.0",
 		"daisyui": "^3.3.1",
 		"dotenv-cli": "^7.2.1",
+		"felte": "^1.2.11",
 		"prisma": "^5.0.0",
 		"trpc-sveltekit": "^3.5.17",
 		"zod": "^3.21.4"

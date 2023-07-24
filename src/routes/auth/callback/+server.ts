@@ -11,14 +11,14 @@ export const GET: RequestHandler = async ({ url, locals: { supabase } }) => {
 
 	const user = await supabase.auth.getUser();
 
-	if (!user.data?.user?.email) throw redirect(303, '/');
+	if (!user.data?.user?.email) throw redirect(302, '/');
 
 	await prisma.user.create({
 		data: {
-			email: user.data?.user?.email,
-			id: user.data?.user?.id
+			email: user.data.user.email,
+			id: user.data.user.id
 		}
 	});
 
-	throw redirect(303, '/');
+	throw redirect(301, '/');
 };
