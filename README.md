@@ -8,7 +8,7 @@
      <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>&nbsp;&nbsp; 
  </p> 
   
- ## The Kit Stack 
+ ## 📚 The Kit Stack 
   
  🛠️ **SvelteKit**: Fullstack framework 
   
@@ -26,7 +26,7 @@
   
  🤖 **Vercel**: Deploy with CI 
   
- ## Features 
+ ## 🔌 Features 
   
  - **Authentication**: Sign up, sign in, sign out, forgot password, change password, change email, change username, delete account 
   
@@ -51,9 +51,9 @@
  pnpm install 
  ``` 
   
- ### Development 
+ ### ⚙️ Development 
   
- #### Configure Supabase Auth 
+ #### 🔒 Configure Supabase Auth 
   
  1. Rename the `.env.local.example` file to `.env.local`, this is where you will store your environment variables. 
   
@@ -65,7 +65,7 @@
   
  3. Fill in `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` with your `Project URL` and Supabase credentials. You can find both of them in your Supabase Dashboard under `Project Settings > API > Project API keys`, linked [here](https://supabase.com/dashboard/project/_/settings/api). 
   
- #### Configure Prisma 
+ #### 🔋 Configure Prisma 
   
  For this step you can use any postgres database; my recommendations are Supabase, Vercel, Railway or Heroku. 
   
@@ -91,7 +91,7 @@
  pnpm dev 
  ``` 
   
- ### Production 
+ ### 🚀 Production 
   
  #### Configure Vercel 
   
@@ -107,7 +107,7 @@
   
  To set it up just create a new project on Vercel using the `Import Git repository` option and follow the instructions, all the proper commands are already configured so you don't have to do anything else. 
   
- ## Behind the design 
+ ## 🖌️ Behind the design 
 
  ### 🎨 DaisyUI 
   
