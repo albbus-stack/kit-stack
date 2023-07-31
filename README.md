@@ -42,14 +42,19 @@
   
  ## Getting Started 
   
- Run the following commands in your terminal to clone the starter, create a new repo and install the dependencies: 
-  
- ```bash 
- git clone https://github.com/albbus-stack/kit-stack.git 
- cd kit-stack && rm -rf .git 
- git init 
- pnpm install 
- ``` 
+ Run the following command in your terminal to clone the starter, create a new empty git repo and install the dependencies:
+
+##### Unix
+ 
+ ```bash
+curl -l https://github.com/albbus-stack/blob/main/install.sh | sudo bash
+```
+
+##### Windows
+
+ ```bash
+. { iwr -useb https://github.com/albbus-stack/blob/main/install.ps1 } | iex; install
+```
   
  ### ⚙️ Development 
   
