@@ -114,18 +114,6 @@ curl -l https://github.com/albbus-stack/blob/main/install.sh | sudo bash
   
  ## 🖌️ Behind the design 
 
- ### 🎨 DaisyUI 
-  
- Tailwind + DaisyUI + Heroicons: <https://github.com/JustinVoitel/svelte-hero-icons>
-  
- ### 🧹 Prisma + tRPC 
-  
- TODO: Add tRPC CRUD operations for the user model. 
-  
- ### 🔐 Supabase Auth 
-  
- TODO: Add JWT validation to the tRPC server to reduce the number of requests to the Supabase API?? 
-
  ### 🛠️ Svelte-kit
 
  Svelte-Kit was chosen as the full-stack framework, eliminating the need for a state management dependency and providing a faster and more robust development experience compared to Next.js.
@@ -134,9 +122,13 @@ curl -l https://github.com/albbus-stack/blob/main/install.sh | sudo bash
 
  For the design system, the stack uses Tailwind CSS with DaisyUI and Heroicons. Additionally, the project includes Fontsource for font management.
 
+ Tailwind + DaisyUI + Heroicons: <https://github.com/JustinVoitel/svelte-hero-icons>
+
  ### 🧹 Prisma + tRPC
 
  Prisma, the database ORM, is combined with tRPC for typesafe API calls. Future plans include adding tRPC CRUD operations for the user model.
+
+TODO: Add tRPC CRUD operations for the user model. 
 
  ### 🔐 Supabase Auth
 
