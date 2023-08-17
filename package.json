@@ -24,6 +24,7 @@
 		"vercel:build": "pnpm db:generate && pnpm db:deploy && pnpm vite:build"
 	},
 	"devDependencies": {
+		"@stripe/stripe-js": "^2.1.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
@@ -36,8 +37,10 @@
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
 		"prettier-plugin-tailwindcss": "^0.4.1",
+		"stripe": "^13.1.0",
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
+		"svelte-stripe": "^0.0.22",
 		"tailwindcss": "^3.3.3",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",

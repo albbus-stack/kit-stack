@@ -107,10 +107,10 @@
 					<button class="btn btn-primary" on:click={() => (actionType = 'signup')}>Sign up</button>
 				{/if}
 				{#if type === 'signin' || type === 'demo'}
-					<button class="btn btn-primary" on:click={() => (actionType = 'signin')}>Sign in</button>
+					<button class="btn btn-info" on:click={() => (actionType = 'signin')}>Sign in</button>
 				{/if}
 				{#if type === 'demo'}
-					<button class="btn btn-primary" on:click|preventDefault={handleSignOut}>Sign out</button>
+					<button class="btn btn-warning" on:click|preventDefault={handleSignOut}>Sign out</button>
 				{/if}
 			</div>
 			<span class="mt-2 text-red-500">{submitError}</span>
