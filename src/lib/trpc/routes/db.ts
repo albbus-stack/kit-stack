@@ -3,7 +3,7 @@ import { protectedProcedure, router } from '../trpc';
 
 export const dbRouter = router({
 	greeting: protectedProcedure.query(async () => {
-		return `Hello from the authed db`;
+		return `Hello from the authed db @ ${new Date().toLocaleTimeString()}`;
 	}),
 	createPost: protectedProcedure
 		.input(

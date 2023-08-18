@@ -96,13 +96,13 @@
 			<input name="email" class="input border-black/50 dark:border-white/50" />
 
 			<ValidationMessage for="email" let:messages={message}>
-				<span class="text-red-500">{message || ''}</span>
+				<span class="text-error">{message || ''}</span>
 			</ValidationMessage>
 
 			<input type="password" name="password" class="input border-black/50 dark:border-white/50" />
 
 			<ValidationMessage for="password" let:messages={message}>
-				<span class="text-red-500">{message || ''}</span>
+				<span class="text-error">{message || ''}</span>
 			</ValidationMessage>
 
 			<div class="mt-5 flex flex-col gap-5 sm:flex-row">
@@ -116,7 +116,7 @@
 					<button class="btn btn-warning" on:click|preventDefault={handleSignOut}>Sign out</button>
 				{/if}
 			</div>
-			<span class="mt-2 text-red-500">{submitError}</span>
+			<span class="mt-2 text-error">{submitError}</span>
 		</form>
 	{:else}
 		<button class="btn btn-primary" on:click|preventDefault={handleSignOut}>Sign out</button>

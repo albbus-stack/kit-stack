@@ -10,7 +10,7 @@
 	import type { PaymentIntent } from '$lib/trpc/routes/payments';
 	import { ArrowLeft, Icon } from 'svelte-hero-icons';
 
-	const PAYMENT_AMOUNT = 200;
+	let paymentAmount = 200;
 
 	let stripe: Stripe | null = null;
 	let clientSecret: string | null = null;
@@ -27,7 +27,7 @@
 		// Create a new stripe payment intent with the specified amount
 		let intent: PaymentIntent | null = null;
 		try {
-			intent = await trpc($page).payments.paymentIntent.query({ amount: PAYMENT_AMOUNT });
+			intent = await trpc($page).payments.paymentIntent.query({ amount: paymentAmount });
 		} catch (e) {
 			if (e instanceof TRPCClientError) {
 				throw e.message;
@@ -63,14 +63,13 @@
 	<Icon class="w-7" src={ArrowLeft} />
 </a>
 
-<h1 class="mb-10 text-center text-2xl font-bold">Stripe Payment Example</h1>
-
 {#if stripe && clientSecret}
-	<h4
-		class="mx-auto mb-10 w-fit select-none rounded-lg bg-gray-600/30 p-5 text-4xl font-bold text-primary"
-	>
-		{PAYMENT_AMOUNT.toString()}$
-	</h4>
+	<div class="flex w-full justify-center text-4xl font-bold text-primary">
+		<div class="relative mx-auto mb-10 w-[200px] rounded-lg bg-gray-600/30 p-5 pr-2">
+			<div class="absolute left-5 top-1/2 -translate-y-1/2">$</div>
+			<input type="number" class="ml-7 w-3/4 bg-transparent" bind:value={paymentAmount} />
+		</div>
+	</div>
 	<Elements {stripe} {clientSecret} theme="flat" labels="floating" bind:elements>
 		<form
 			class="mx-auto mb-20 flex max-w-3xl flex-col gap-5 px-10"
@@ -99,7 +98,7 @@
 			</button>
 
 			{#if error}
-				<p class="text-center text-red-400">{error.message}</p>
+				<p class="text-center text-error">{error.message}</p>
 			{/if}
 		</form>
 	</Elements>

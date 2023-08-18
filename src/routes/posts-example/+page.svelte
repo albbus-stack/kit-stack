@@ -81,11 +81,13 @@
 </script>
 
 <div class="card w-full flex-col items-center justify-center gap-10 p-10">
-	<a href="/" role="button" class="btn btn-primary -mb-10 self-start">
+	<a href="/" role="button" class="btn btn-primary self-start">
 		<Icon class="w-7" src={ArrowLeft} />
 	</a>
-	<p class="text-red-500">{error}</p>
 	<div class="card mx-auto min-w-[250px] flex-col items-center gap-5">
+		{#if error}
+			<p class="text-error">{error}</p>
+		{/if}
 		{#if loading}
 			<p>Loading...</p>
 		{/if}

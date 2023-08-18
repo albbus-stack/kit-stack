@@ -5,7 +5,7 @@
 	export let data;
 </script>
 
-<img src="/logo.svg" alt="kit-stack logo" class="mx-auto mt-16" />
+<img src="/logo.svg" alt="kit-stack logo" class="mx-auto mt-16 rounded-2xl shadow-lg" />
 
 <div class="card mx-auto my-16 max-w-[70vw] items-center gap-5">
 	<h6 class="mb-3 text-xl font-bold">Trpc Queries</h6>

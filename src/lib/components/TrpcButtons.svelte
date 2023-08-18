@@ -39,7 +39,7 @@
 </script>
 
 <div class="card flex-col gap-10 sm:flex-row">
-	<div class="card min-w-[250px] flex-col items-center gap-5">
+	<div class="card w-[250px] flex-col items-center gap-5">
 		<a
 			href="#load"
 			role="button"
@@ -47,9 +47,9 @@
 			aria-busy={loading}
 			on:click|preventDefault={loadQuery}>Load</a
 		>
-		<p>{loading ? 'Loading...' : greeting}</p>
+		<p class="text-center">{loading ? 'Loading...' : greeting}</p>
 	</div>
-	<div class="card min-w-[250px] flex-col items-center gap-5">
+	<div class="card w-[250px] flex-col items-center gap-5">
 		<a
 			href="#load"
 			role="button"
@@ -57,6 +57,6 @@
 			aria-busy={loading}
 			on:click|preventDefault={loadAuthedQuery}>Load Authed</a
 		>
-		<p>{authedLoading ? 'Loading...' : authedGreeting}</p>
+		<p class="text-center">{authedLoading ? 'Loading...' : authedGreeting}</p>
 	</div>
 </div>
