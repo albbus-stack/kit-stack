@@ -103,6 +103,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.4.3
     version: 3.4.6(postcss@8.4.27)(svelte@4.1.1)
+  svelte-hero-icons:
+    specifier: ^5.0.0
+    version: 5.0.0
   svelte-stripe:
     specifier: ^0.0.22
     version: 0.0.22
@@ -545,6 +548,10 @@ packages:
       picomatch: 2.3.1
       rollup: 3.26.3
     dev: false
+
+  /@steeze-ui/heroicons@2.2.3:
+    resolution: {integrity: sha512-bv4YK375U9TDS50SmJ5VdFy2UmMhgKbJCCbo6IUU3qs2luEj2VX6sQoDy96j8AIKttxMd62ih1j0lZj7CTjIfA==}
+    dev: true
 
   /@stripe/stripe-js@1.54.2:
     resolution: {integrity: sha512-R1PwtDvUfs99cAjfuQ/WpwJ3c92+DAMy9xGApjqlWQMj0FKQabUAys2swfTRNzuYAYJh7NqK2dzcYVNkKLEKUg==}
@@ -2494,6 +2501,13 @@ packages:
       postcss: 8.4.27
       postcss-scss: 4.0.6(postcss@8.4.27)
       svelte: 4.1.1
+    dev: true
+
+  /svelte-hero-icons@5.0.0:
+    resolution: {integrity: sha512-xKMI/Z0f/6831I0R1YKJjVbAw9VBD6XKysvng6LtomlS4n3ZD1lZNAfLrrCmnc1pmiLr/8sVeQA8kgHLQwYlRg==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@steeze-ui/heroicons': 2.2.3
     dev: true
 
   /svelte-hmr@0.15.2(svelte@4.1.1):

@@ -8,6 +8,7 @@
 	import { page } from '$app/stores';
 	import { TRPCClientError } from '@trpc/client';
 	import type { PaymentIntent } from '$lib/trpc/routes/payments';
+	import { ArrowLeft, Icon } from 'svelte-hero-icons';
 
 	const PAYMENT_AMOUNT = 200;
 
@@ -58,7 +59,11 @@
 	}
 </script>
 
-<h1 class="my-10 text-center text-2xl font-bold">Stripe Payment Example</h1>
+<a href="/" role="button" class="btn btn-primary m-10 mb-5">
+	<Icon class="w-7" src={ArrowLeft} />
+</a>
+
+<h1 class="mb-10 text-center text-2xl font-bold">Stripe Payment Example</h1>
 
 {#if stripe && clientSecret}
 	<h4

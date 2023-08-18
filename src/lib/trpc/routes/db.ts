@@ -1,14 +1,8 @@
 import { z } from 'zod';
 import { protectedProcedure, router } from '../trpc';
-import type { Post } from '@prisma/client';
 
 export const dbRouter = router({
-	greeting: protectedProcedure.query(async ({ ctx }) => {
-		const { prisma } = ctx;
-		const users = await prisma.user.findMany();
-
-		console.log('All Users:', users);
-
+	greeting: protectedProcedure.query(async () => {
 		return `Hello from the authed db`;
 	}),
 	createPost: protectedProcedure

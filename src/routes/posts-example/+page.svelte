@@ -3,6 +3,7 @@
 	import { trpc } from '$lib/trpc/client';
 	import type { Post } from '@prisma/client';
 	import { TRPCClientError } from '@trpc/client';
+	import { Icon, ArrowLeft } from 'svelte-hero-icons';
 
 	let loading = false;
 	let error = '';
@@ -76,6 +77,9 @@
 </script>
 
 <div class="card w-full flex-col items-center justify-center gap-10 p-10">
+	<a href="/" role="button" class="btn btn-primary -mb-10 self-start">
+		<Icon class="w-7" src={ArrowLeft} />
+	</a>
 	<p class="text-red-500">{error}</p>
 	<div class="card mx-auto min-w-[250px] flex-col items-center gap-5">
 		{#if loading}
