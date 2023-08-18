@@ -60,6 +60,7 @@
 		"dotenv-cli": "^7.2.1",
 		"felte": "^1.2.11",
 		"prisma": "^5.0.0",
+		"superjson": "^1.13.1",
 		"trpc-sveltekit": "^3.5.17",
 		"zod": "^3.21.4"
 	}

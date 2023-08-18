@@ -42,7 +42,7 @@
 			}
 
 			if (res?.error) {
-				throw new Error(res.error.message);
+				submitError = res.error.message;
 			} else {
 				submitError = '';
 			}

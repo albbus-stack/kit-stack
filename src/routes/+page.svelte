@@ -19,7 +19,12 @@
 	<a href="/protected" role="button" class="btn btn-primary w-[250px]">secret page</a>
 </div>
 
-<div class="card mx-auto mb-28 mt-20 items-center gap-5">
+<div class="card mx-auto mb-20 mt-20 items-center gap-5">
 	<h6 class="mb-3 text-xl font-bold">Stripe Payment Example</h6>
 	<a href="/payment-example" role="button" class="btn btn-info w-[250px]">Stripe</a>
+</div>
+
+<div class="card mx-auto mb-28 mt-20 items-center gap-5">
+	<h6 class="mb-3 text-xl font-bold">Posts CRUD example</h6>
+	<a href="/posts-example" role="button" class="btn btn-success w-[250px]">Posts</a>
 </div>
