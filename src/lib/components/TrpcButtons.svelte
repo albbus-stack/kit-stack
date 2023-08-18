@@ -9,6 +9,7 @@
 	let loading = false;
 	let authedLoading = false;
 
+	// This loads a public trpc query
 	const loadQuery = async () => {
 		loading = true;
 		try {
@@ -22,6 +23,7 @@
 		}
 	};
 
+	// This loads an authenticated trpc query
 	const loadAuthedQuery = async () => {
 		authedLoading = true;
 		try {

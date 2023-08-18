@@ -78,6 +78,7 @@
 		>
 			<LinkAuthenticationElement />
 			<PaymentElement />
+			<!-- Listing all the following props is needed for typescript not to complain -->
 			<Address
 				mode="billing"
 				allowedCountries={[]}

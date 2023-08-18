@@ -9,10 +9,7 @@ const t = initTRPC.context<Context>().create({
 	}
 });
 
-/**
- * This is a middleware that checks if the user is authenticated
- * @link https://trpc.io/docs/middlewares
- */
+// This is a middleware that checks if the user is authenticated
 const isAuthed = t.middleware(({ next, ctx }) => {
 	if (!ctx.user) {
 		throw new TRPCError({ code: 'UNAUTHORIZED', message: 'Not authenticated' });

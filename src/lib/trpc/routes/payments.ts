@@ -11,6 +11,7 @@ export const paymentsRouter = router({
 			})
 		)
 		.query(async ({ ctx, input }) => {
+			// Review on the Stripe docs all the possible params that can be passed in
 			const paymentIntent = await ctx.stripe.paymentIntents.create({
 				amount: input.amount,
 				currency: 'usd',

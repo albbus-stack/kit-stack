@@ -5,6 +5,7 @@ import type { LayoutLoadEvent } from './$types';
 export const load = async ({ fetch, data, depends }: LayoutLoadEvent) => {
 	depends('supabase:auth');
 
+	// Initialize supabase
 	const supabase = createSupabaseLoadClient({
 		supabaseUrl: PUBLIC_SUPABASE_URL,
 		supabaseKey: PUBLIC_SUPABASE_ANON_KEY,

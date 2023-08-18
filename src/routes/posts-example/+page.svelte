@@ -9,6 +9,7 @@
 	let error = '';
 	let posts: Post[] = [];
 
+	// This queries all the posts from the database
 	const loadPosts = async () => {
 		loading = true;
 		try {
@@ -22,6 +23,7 @@
 		}
 	};
 
+	// This creates a new post
 	const createPost = async () => {
 		loading = true;
 		try {
@@ -39,6 +41,7 @@
 		}
 	};
 
+	// This updates an existing post with a certain id
 	const updatePost = async (id: number) => {
 		loading = true;
 		try {
@@ -57,6 +60,7 @@
 		}
 	};
 
+	// This deletes an existing post with a certain id
 	const deletePost = async (id: number) => {
 		loading = true;
 		try {

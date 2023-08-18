@@ -17,6 +17,7 @@
 			? 'Sign out'
 			: 'Sign up & Login';
 
+	// This defines the form schema for felte
 	const formSchema = z.object({
 		email: z.string().email().nonempty({
 			message: 'Email is required'
@@ -29,6 +30,7 @@
 	let submitError: string = '';
 	let actionType: 'signup' | 'signin' | 'signout' | 'demo' = 'signup';
 
+	// This creates the form, handling validation, submission and error reporting
 	const { form } = createForm<z.infer<typeof formSchema>>({
 		extend: [validator({ schema: formSchema }), reporter],
 		onSubmit: async (values) => {
@@ -52,6 +54,7 @@
 		}
 	});
 
+	// We need to assing these on every re-render
 	let user = data.session?.user?.email;
 	let { supabase } = data;
 
@@ -77,7 +80,7 @@
 		});
 	};
 
-	// This doesn't need schema validation
+	// The sign out doesn't need schema validation
 	const handleSignOut = async () => {
 		const res = await supabase.auth.signOut();
 		if (!res.error) {
