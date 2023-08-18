@@ -7,6 +7,7 @@
 	import { trpc } from '$lib/trpc/client';
 	import { page } from '$app/stores';
 	import { TRPCClientError } from '@trpc/client';
+	import type { PaymentIntent } from '$lib/trpc/routes/payments';
 
 	const PAYMENT_AMOUNT = 200;
 
@@ -23,7 +24,7 @@
 
 	async function createPaymentIntent() {
 		// Create a new stripe payment intent with the specified amount
-		let intent;
+		let intent: PaymentIntent | null = null;
 		try {
 			intent = await trpc($page).payments.paymentIntent.query({ amount: PAYMENT_AMOUNT });
 		} catch (e) {
@@ -32,11 +33,11 @@
 			}
 		}
 
-		return intent?.clientSecret!;
+		return intent!.clientSecret;
 	}
 
 	async function submitForm() {
-		// Block another click on the button while processing
+		// Block another click on the button while processing a payment
 		if (processing) return;
 		processing = true;
 
@@ -46,14 +47,12 @@
 			redirect: 'if_required'
 		});
 
-		console.log({ result });
-
 		if (result?.error) {
 			// Show the error to the user
 			error = result.error;
 			processing = false;
 		} else {
-			// Redirect to a thank you page.
+			// Redirect to a success page
 			goto('/');
 		}
 	}

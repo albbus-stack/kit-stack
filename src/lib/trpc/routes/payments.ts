@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { publicProcedure, router } from '../trpc';
 
+export type PaymentIntent = { clientSecret: string | null };
+
 export const paymentsRouter = router({
 	paymentIntent: publicProcedure
 		.input(
@@ -19,6 +21,6 @@ export const paymentsRouter = router({
 
 			return {
 				clientSecret: paymentIntent.client_secret
-			};
+			} as PaymentIntent;
 		})
 });
