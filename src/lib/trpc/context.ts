@@ -1,6 +1,12 @@
+import { SECRET_STRIPE_KEY } from '$env/static/private';
 import { prisma } from '$lib/db';
 import type { RequestEvent } from '@sveltejs/kit';
 import type { inferAsyncReturnType } from '@trpc/server';
+import Stripe from 'stripe';
+
+const stripe = new Stripe(SECRET_STRIPE_KEY, {
+	apiVersion: '2023-08-16'
+});
 
 export async function createContext(event: RequestEvent) {
 	const getUser = async () => {
@@ -12,6 +18,7 @@ export async function createContext(event: RequestEvent) {
 
 	return {
 		prisma,
+		stripe,
 		user: await getUser()
 	};
 }

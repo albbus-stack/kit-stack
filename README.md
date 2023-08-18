@@ -18,9 +18,9 @@
   
  🔐 **Supabase Auth**: Authentication
 
- 🎨 **DaisyUI**: Component Library
-
  💳 **Stripe**: Payments
+
+ 🎨 **DaisyUI**: Component Library
   
  📝 **Felte**: Form Validation
   

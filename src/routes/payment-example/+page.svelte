@@ -4,6 +4,11 @@
 	import { loadStripe, type Stripe, type StripeError } from '@stripe/stripe-js';
 	import { PUBLIC_STRIPE_KEY } from '$env/static/public';
 	import { Elements, PaymentElement, LinkAuthenticationElement, Address } from 'svelte-stripe';
+	import { trpc } from '$lib/trpc/client';
+	import { page } from '$app/stores';
+	import { TRPCClientError } from '@trpc/client';
+
+	const PAYMENT_AMOUNT = 200;
 
 	let stripe: Stripe | null = null;
 	let clientSecret: string | null = null;
@@ -17,16 +22,17 @@
 	});
 
 	async function createPaymentIntent() {
-		const response = await fetch('/payment-intent', {
-			method: 'POST',
-			headers: {
-				'content-type': 'application/json'
-			},
-			body: JSON.stringify({})
-		});
-		const { clientSecret } = await response.json();
+		// Create a new stripe payment intent with the specified amount
+		let intent;
+		try {
+			intent = await trpc($page).payments.paymentIntent.query({ amount: PAYMENT_AMOUNT });
+		} catch (e) {
+			if (e instanceof TRPCClientError) {
+				throw e.message;
+			}
+		}
 
-		return clientSecret;
+		return intent?.clientSecret!;
 	}
 
 	async function submitForm() {
@@ -59,7 +65,7 @@
 	<h4
 		class="mx-auto mb-10 w-fit select-none rounded-lg bg-gray-600/30 p-5 text-4xl font-bold text-primary"
 	>
-		200$
+		{PAYMENT_AMOUNT.toString()}$
 	</h4>
 	<Elements {stripe} {clientSecret} theme="flat" labels="floating" bind:elements>
 		<form
