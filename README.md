@@ -138,8 +138,6 @@ curl -l https://github.com/albbus-stack/blob/main/install.sh | sudo bash
 
  Prisma, the database ORM, is combined with tRPC for typesafe API calls. Future plans include adding tRPC CRUD operations for the user model.
 
-TODO: Add tRPC CRUD operations for the user model.
-
 ### 🔐 Supabase Auth
 
  Supabase Auth handles authentication, covering sign up, sign in, sign out, forgot password, change password, change email, change username, and account deletion. To further optimize the application, consideration is given to adding JWT validation to the tRPC server, reducing the number of requests to the Supabase API.
