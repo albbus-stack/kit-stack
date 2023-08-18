@@ -27,8 +27,6 @@ export const dbRouter = router({
 				}
 			});
 
-			console.log(post);
-
 			return post;
 		}),
 	getPosts: protectedProcedure.query(async ({ ctx }) => {

@@ -51,13 +51,13 @@
 ##### Unix
 
  ```bash
-curl -l https://github.com/albbus-stack/blob/main/install.sh | sudo bash
+curl -l https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.sh | sudo bash
 ```
 
 ##### Windows
 
  ```bash
-. { iwr -useb https://github.com/albbus-stack/blob/main/install.ps1 } | iex; install
+. { iwr -useb https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.ps1 } | iex; install
 ```
   
 ### ⚙️ Development
@@ -117,6 +117,16 @@ curl -l https://github.com/albbus-stack/blob/main/install.sh | sudo bash
  ```
   
  Run `vercel login` and then `vercel .` from the root of the project to deploy your app using the preconfigured commands.
+
+ Head over to Vercel to upload your environment variables under `Project Settings > Environment Variables`, linked [here](https://vercel.com/dashboard/). You can drag and drop your `.env.local` file. You should also change the `DATABASE_URL` variable with the connection string to your production database and all the other keys to production keys, not the test ones.
+
+ If you need to change the prisma schema on your production database, you can run `vercel db:migrate` to generate a new migration file while preserving the data, then Vercel will automatically run `vercel db:deploy` on the server to apply the changes for every commit.
+
+ Finally run another vercel build to apply the changes:
+  
+ ```bash
+    vercel .
+```
   
  Alternatively, you can use the [Vercel GitHub](https://vercel.com/docs/git-integrations) integration to deploy your app straight from your uploaded repo everytime you push to the `main` branch.
   
