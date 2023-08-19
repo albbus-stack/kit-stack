@@ -2,7 +2,7 @@ import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/publi
 import { createSupabaseLoadClient } from '@supabase/auth-helpers-sveltekit';
 import type { LayoutLoadEvent } from './$types';
 
-export const load = async ({ fetch, data, depends }: LayoutLoadEvent) => {
+export const load = async ({ fetch, data, depends, url }: LayoutLoadEvent) => {
 	depends('supabase:auth');
 
 	// Initialize supabase
@@ -17,5 +17,5 @@ export const load = async ({ fetch, data, depends }: LayoutLoadEvent) => {
 		data: { session }
 	} = await supabase.auth.getSession();
 
-	return { supabase, session };
+	return { supabase, session, url: url.pathname };
 };

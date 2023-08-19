@@ -9,6 +9,7 @@
 	import { TRPCClientError } from '@trpc/client';
 	import type { PaymentIntent } from '$lib/trpc/routes/payments';
 	import { ArrowLeft, Icon } from 'svelte-hero-icons';
+	import { disableScrollHandling } from '$app/navigation';
 
 	let paymentAmount = 200;
 
@@ -19,6 +20,7 @@
 	let processing = false;
 
 	onMount(async () => {
+		disableScrollHandling();
 		stripe = await loadStripe(PUBLIC_STRIPE_KEY);
 		clientSecret = await createPaymentIntent();
 	});

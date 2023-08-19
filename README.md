@@ -98,8 +98,6 @@ curl -l https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.sh
  pnpm db:push 
  ```
   
- For any future changes to the database schema, you can run `pnpm db:migrate` to generate a new migration file while preserving the data, then Vercel will automatically run `pnpm db:deploy` on the server to apply the changes for every commit.
-  
  3. Finally, start the development server:
   
  ```bash
@@ -126,7 +124,7 @@ curl -l https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.sh
 
  If you need to change the prisma schema on your production database, you can run `vercel db:migrate` to generate a new migration file while preserving the data, then Vercel will automatically run `vercel db:deploy` on the server to apply the changes for every commit.
 
- Finally run another vercel build to apply the changes:
+ Finally, run another vercel build to apply the changes:
   
  ```bash
     vercel .

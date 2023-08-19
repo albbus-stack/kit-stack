@@ -1,6 +1,12 @@
 <script lang="ts">
 	import LoginForm from '$lib/components/LoginForm.svelte';
 	import TrpcButtons from '$lib/components/TrpcButtons.svelte';
+	import { disableScrollHandling } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		disableScrollHandling();
+	});
 
 	export let data;
 </script>

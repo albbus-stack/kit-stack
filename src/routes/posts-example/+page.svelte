@@ -4,6 +4,12 @@
 	import type { Post } from '@prisma/client';
 	import { TRPCClientError } from '@trpc/client';
 	import { Icon, ArrowLeft } from 'svelte-hero-icons';
+	import { disableScrollHandling } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		disableScrollHandling();
+	});
 
 	let loading = false;
 	let error = '';
