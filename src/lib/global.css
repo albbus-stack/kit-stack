@@ -5,4 +5,5 @@
 body {
 	font-family: 'Montserrat Alternates', sans-serif;
 	overflow-x: hidden;
+	overflow-y: scroll;
 }
