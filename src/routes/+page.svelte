@@ -22,7 +22,7 @@
 
 <div class="card mx-auto mb-20 mt-20 items-center gap-5">
 	<h6 class="mb-3 text-xl font-bold">Protected Page Route</h6>
-	<a href="/protected" role="button" class="btn btn-primary w-[250px]">secret page</a>
+	<a href="/protected" role="button" class="btn btn-primary w-[250px]">Secret Page</a>
 </div>
 
 <div class="card mx-auto mb-20 mt-20 items-center gap-5">
