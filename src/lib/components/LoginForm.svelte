@@ -90,7 +90,7 @@
 </script>
 
 <div class="card items-center p-5">
-	<h6 class="mb-8 text-xl font-bold">{title}</h6>
+	<h6 class="mb-8 select-none text-xl font-bold">{title}</h6>
 	{#if type !== 'signout'}
 		<form class="card items-center gap-4" use:form>
 			<input name="email" class="input border-black/50 bg-transparent dark:border-white/50" />
