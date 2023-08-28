@@ -20,7 +20,7 @@
 	// This defines the form schema for felte
 	const formSchema = z.object({
 		email: z.string().email().nonempty({
-			message: 'Email is required'
+			message: ' Email is required'
 		}),
 		password: z.string().min(8, {
 			message: 'Password must be at least 8 characters long'
@@ -93,13 +93,17 @@
 	<h6 class="mb-8 text-xl font-bold">{title}</h6>
 	{#if type !== 'signout'}
 		<form class="card items-center gap-4" use:form>
-			<input name="email" class="input border-black/50 dark:border-white/50" />
+			<input name="email" class="input bg-transparent dark:border-white/50 border-black/50 " />
 
 			<ValidationMessage for="email" let:messages={message}>
 				<span class="text-error">{message || ''}</span>
 			</ValidationMessage>
 
-			<input type="password" name="password" class="input border-black/50 dark:border-white/50" />
+			<input
+				type="password"
+				name="password"
+				class="input border-black/50 bg-transparent dark:border-white/50"
+			/>
 
 			<ValidationMessage for="password" let:messages={message}>
 				<span class="text-error">{message || ''}</span>

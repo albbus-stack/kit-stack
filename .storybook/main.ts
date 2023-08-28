@@ -6,7 +6,11 @@ const config: StorybookConfig = {
 		'@storybook/addon-links',
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
-		'@storybook/addon-actions'
+		'@storybook/addon-actions',
+		{
+			name: '@storybook/addon-styling',
+			options: {}
+		}
 	],
 	framework: {
 		name: '@storybook/sveltekit',

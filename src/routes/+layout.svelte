@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '@fontsource/montserrat-alternates';
-	import '$lib/global.css';
+	import '../global.css';
 
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
