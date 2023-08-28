@@ -1,0 +1,5 @@
+tasks:
+  - init: pnpm install
+    command: pnpm run dev
+
+
