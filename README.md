@@ -57,7 +57,7 @@ curl -l https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.sh
 ##### Windows
 
  ```bash
-. { iwr -useb https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.ps1 } | iex; install
+iwr https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.ps1 -useb | iex
 ```
   
 ### ⚙️ Development
