@@ -93,7 +93,7 @@
 	<h6 class="mb-8 text-xl font-bold">{title}</h6>
 	{#if type !== 'signout'}
 		<form class="card items-center gap-4" use:form>
-			<input name="email" class="input bg-transparent dark:border-white/50 border-black/50 " />
+			<input name="email" class="input border-black/50 bg-transparent dark:border-white/50" />
 
 			<ValidationMessage for="email" let:messages={message}>
 				<span class="text-error">{message || ''}</span>

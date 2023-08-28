@@ -6,7 +6,6 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 const meta = {
   title: 'Components/LoginForm',
   component: LoginForm,
-  tags: ['autodocs'],
   args:{
     data: {
       supabase: null as unknown as SupabaseClient<never, "public", never>,
@@ -28,5 +27,23 @@ type Story = StoryObj<typeof meta>;
 export const Demo: Story = {
   args: {
     type: "demo"
+  }
+};
+
+export const Signup: Story = {
+  args: {
+    type: "signup"
+  }
+};
+
+export const Signin: Story = {
+  args: {
+    type: "signin"
+  }
+};
+
+export const Signout: Story = {
+  args: {
+    type: "signout"
   }
 };
