@@ -5,6 +5,7 @@
 		"bradlc.vscode-tailwindcss",
 		"Prisma.prisma",
 		"pmneo.tsimporter",
-		"kuscamara.remove-unused-imports"
+		"kuscamara.remove-unused-imports",
+		"inlang.vs-code-extension"
 	]
 }

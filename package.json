@@ -16,6 +16,7 @@
     "db:migrate": "pnpm with-env prisma migrate dev",
     "db:deploy": "pnpm with-env prisma migrate deploy",
     "db:studio": "pnpm with-env prisma studio",
+    "lang:studio": "pnpm dlx @inlang/cli open editor",
     "preview": "pnpm with-env vite preview",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
