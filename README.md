@@ -3,6 +3,7 @@
      </br> </br>
      A fullstack starter kit heavily inspired by <a href="https://create.t3.gg/">create-t3-app</a> with variuos added bonuses
      </br> </br>
+     <img src="https://img.shields.io/badge/SvelteKit-FF3F00?style=for-the-badge&logo=svelte&logoColor=white"/>&nbsp;&nbsp;
      <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>&nbsp;&nbsp;
      <img src="https://img.shields.io/badge/Supabase-2A9D69?style=for-the-badge&logo=supabase&logoColor=white"/>&nbsp;&nbsp;
      <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>&nbsp;&nbsp;
