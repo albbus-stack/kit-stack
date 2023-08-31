@@ -1,20 +1,13 @@
 <script lang="ts">
-	import { i } from '@inlang/sdk-js';
-	import { language } from '@inlang/sdk-js';
-	import { switchLanguage } from '@inlang/sdk-js';
 	import LoginForm from '$lib/components/LoginForm.svelte';
 	import TrpcButtons from '$lib/components/TrpcButtons.svelte';
+	import InternationalizationExample from '$lib/components/InternationalizationExample.svelte';
 	import { disableScrollHandling } from '$app/navigation';
 	import { onMount } from 'svelte';
 
 	onMount(async () => {
 		disableScrollHandling();
 	});
-
-	async function toggleLanguages() {
-		if (language === 'it') await switchLanguage('en');
-		else await switchLanguage('it');
-	}
 
 	export let data;
 </script>
@@ -45,8 +38,5 @@
 
 <div class="card mx-auto mb-28 mt-20 items-center gap-5">
 	<h6 class="mb-3 select-none text-xl font-bold">Internationalization</h6>
-	<p>{i('title')}</p>
-	<button class="btn btn-primary w-[250px]" on:click={toggleLanguages}
-		>{language === 'it' ? 'EN' : 'IT'}</button
-	>
+	<InternationalizationExample />
 </div>
