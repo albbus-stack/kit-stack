@@ -16,6 +16,7 @@ const preview: Preview = {
 	},
 
 	decorators: [
+		//@ts-ignore
 		withThemeByDataAttribute({
 		themes: {
       		light: "light",

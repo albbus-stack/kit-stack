@@ -7,17 +7,8 @@ const config: StorybookConfig = {
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
 		'@storybook/addon-actions',
-		{
-			name: '@storybook/addon-styling',
-			options: {}
-		}
+		'@storybook/addon-styling'
 	],
-	framework: {
-		name: '@storybook/sveltekit',
-		options: {}
-	},
-	docs: {
-		autodocs: 'tag'
-	}
+	framework: '@storybook/sveltekit'
 };
 export default config;

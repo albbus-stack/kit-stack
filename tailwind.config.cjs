@@ -7,6 +7,7 @@ export default {
 		extend: {}
 	},
 	plugins: [require('daisyui')],
+	darkMode: ['class', '[data-theme="dark"]'],
 	daisyui: {
 		themes: [
 			{
