@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { protectedProcedure, router } from '../trpc';
+import { TRPCClientError } from '@trpc/client';
 
 export const dbRouter = router({
 	greeting: protectedProcedure.query(async () => {
@@ -13,7 +14,13 @@ export const dbRouter = router({
 			})
 		)
 		.mutation(async ({ ctx, input }) => {
-			const { prisma } = ctx;
+			const { user, prisma } = ctx;
+
+			// REMOVE THIS CHECK
+			// It prevents post creation spamming on the live demo
+			if(user !== "50c7cfa4-7d29-498d-9725-902d8e6618c2") {
+				throw new TRPCClientError("You are not authorized to create a post.")
+			}
 
 			const post = await prisma.post.create({
 				data: {
