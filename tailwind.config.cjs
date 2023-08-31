@@ -7,7 +7,7 @@ export default {
 		extend: {}
 	},
 	plugins: [require('daisyui')],
-	darkMode: ['class', '[data-theme="dark"]'],
+	darkMode: process.env?.STORYBOOK === 'true' ? ['class', '[data-theme="dark"]'] : undefined,
 	daisyui: {
 		themes: [
 			{

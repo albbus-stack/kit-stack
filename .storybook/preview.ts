@@ -18,13 +18,13 @@ const preview: Preview = {
 	decorators: [
 		//@ts-ignore
 		withThemeByDataAttribute({
-		themes: {
-      		light: "light",
-	      	dark: "dark",
-	    },
-	    defaultTheme: "dark",
-	    attributeName: "data-theme",
-	  }),
+			themes: {
+				light: "light",
+				dark: "dark",
+			},
+			defaultTheme: "dark",
+			attributeName: "data-theme",
+	  	}),
 	]
 };
 
