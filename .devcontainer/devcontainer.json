@@ -1,0 +1,11 @@
+{
+	"name": "Typescript, Pnpm, Prettier, Prisma & Vercel",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/pnpm:2": {},
+		"ghcr.io/devcontainers-contrib/features/prettier:1": {},
+		"ghcr.io/devcontainers-contrib/features/prisma:2": {},
+		"ghcr.io/devcontainers-contrib/features/vercel-cli:1": {}
+	},
+	"postCreateCommand": "pnpm install && pnpm env:sync"
+}
