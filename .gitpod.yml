@@ -1,5 +1,5 @@
 tasks:
-  - init: pnpm install
+  - init: pnpm install && pnpm db:generate && pnpm env:sync
     command: pnpm run dev
 
 

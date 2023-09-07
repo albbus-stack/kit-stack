@@ -47,20 +47,21 @@
   
 ## Getting Started
   
+ Remember to change the `my-kit-stack` at the end of the one liner with your desired folder name to clone the project into.
  Run the following command in your terminal to clone the starter, create a new empty git repo and install the dependencies:
 
 ##### Unix
 
  ```bash
-curl -l https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.sh | sudo bash
+curl -sL https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.sh | sudo bash -c "./install.sh my-kit-stack"
 ```
 
 ##### Windows
 
  ```bash
-iwr https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.ps1 -useb | iex
+iwr https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.ps1 -useb | iex -ArgumentList "folderName=my-kit-stack"
 ```
-  
+
 ### ⚙️ Development
   
 #### 🔒 Configure Supabase Auth
