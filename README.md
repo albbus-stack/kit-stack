@@ -65,15 +65,9 @@ iwr https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.ps1 -u
   
 #### 🔒 Configure Supabase Auth
   
- 1. Rename the `.env.local.example` file to `.env.local`, this is where you will store your environment variables.
+ 1. Open the `.env.local` file, this is where you will store your environment variables.
   
- 2. Generate the types for the environment variables:
-  
- ```bash
- pnpm env:sync 
- ```
-  
- 3. Fill in `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` with your `Project URL` and Supabase credentials. You can find both of them in your Supabase Dashboard under `Project Settings > API > Project API keys`, linked [here](https://supabase.com/dashboard/project/_/settings/api).
+ 2. Fill in `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` with your `Project URL` and Supabase credentials. You can find both of them in your Supabase Dashboard under `Project Settings > API > Project API keys`, linked [here](https://supabase.com/dashboard/project/_/settings/api).
 
 #### 💳 Configure Stripe
 
