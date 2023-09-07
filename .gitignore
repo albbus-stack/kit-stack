@@ -9,7 +9,5 @@ node_modules
 !.env.local.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
 src/lib/db/prisma/dev.db
-
 .vercel

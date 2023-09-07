@@ -94,9 +94,6 @@
 		{#if error}
 			<p class="text-error">{error}</p>
 		{/if}
-		{#if loading}
-			<p>Loading...</p>
-		{/if}
 		{#each posts as post}
 			<div class="card w-full flex-col items-center gap-2 bg-gray-600/30 p-5">
 				<p class="opacity-75">{post.id}</p>
@@ -125,6 +122,9 @@
 				</div>
 			</div>
 		{/each}
+		{#if loading}
+			<p>Loading...</p>
+		{/if}
 	</div>
 	<div class="x-auto card mb-10 min-w-[250px] flex-col items-center gap-5">
 		<a

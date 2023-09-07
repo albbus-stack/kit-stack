@@ -5,5 +5,17 @@
 	"[svelte]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"prettier.documentSelectors": ["**/*.svelte"]
+	"prettier.documentSelectors": ["**/*.svelte"],
+	"files.exclude": {
+		"**/.svelte-kit": true,
+		"**/node_modules": true,
+		"LICENSE": true,
+  	},
+	"explorer.fileNesting.enabled": true,
+ 	"explorer.fileNesting.patterns": {
+		"package.json": ".eslint*, .gitpod*, .pnpm*, pnpm*, .prettier*, vercel*, tsconfig*",
+		"svelte.config.*": "inlang.config*, vite.config*",
+    	"tailwind.config.*": "postcss.config*",
+		"*.svelte": "${capture}.stories.ts",
+	}
 }
