@@ -8,6 +8,12 @@
      <img src="https://img.shields.io/badge/Supabase-2A9D69?style=for-the-badge&logo=supabase&logoColor=white"/>&nbsp;&nbsp;
      <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>&nbsp;&nbsp;
  </p>
+
+ <p align="center">
+  <a href="https://discord.gg/ExwxXtdUvh">
+     <img src="https://img.shields.io/discord/1149671113362776184?color=%235865F2&label=&logo=discord&logoColor=white&style=for-the-badge">
+  </a>
+ </p>
   
 ## 📚 The Kit Stack
 
