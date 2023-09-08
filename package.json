@@ -24,7 +24,7 @@
     "env:sync": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "vercel:build": "pnpm db:generate && pnpm db:deploy && pnpm vite:build",
     "storybook": "STORYBOOK=true storybook dev -p 6006",
-    "build-storybook": "STORYBOOK=true storybook build"
+    "storybook:build": "STORYBOOK=true storybook build"
   },
   "devDependencies": {
     "@inlang/sdk-js": "^0.11.8",
