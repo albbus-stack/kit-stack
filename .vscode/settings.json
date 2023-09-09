@@ -14,7 +14,7 @@
 	"explorer.fileNesting.enabled": true,
  	"explorer.fileNesting.patterns": {
 		"package.json": ".eslint*, .gitpod*, .pnpm*, pnpm*, .prettier*, vercel*, tsconfig*",
-		"svelte.config.*": "inlang.config*, vite.config*",
+		"svelte.config.*": "inlang.config*, vite.config*, project.inlang*",
     	"tailwind.config.*": "postcss.config*",
 		"*.svelte": "${capture}.stories.ts",
 	}

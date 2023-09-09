@@ -1,0 +1,7 @@
+{
+	"$schema": "https://inlang.com/project-config-schema",
+	"sourceLanguageTag": "en",
+	"languageTags": ["en", "it"],
+	"modules": [],
+	"settings": {}
+}
