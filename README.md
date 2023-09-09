@@ -14,7 +14,7 @@
      <img height="30" src="https://img.shields.io/discord/1149671113362776184?color=%235865F2&label=&logo=discord&logoColor=white&style=for-the-badge">
   </a>&nbsp;&nbsp;
   <a href="https://github.com/albbus-stack/kit-stack/wiki">
-     <img height="30" src="https://img.shields.io/badge/Wiki-cbf7cf?label=&logo=github&logoColor=black&style=for-the-badge">
+     <img height="30" src="https://img.shields.io/badge/Wiki-035757?label=&logo=github&style=for-the-badge">
   </a>&nbsp;&nbsp;
   <a href="https://github.com/albbus-stack/kit-stack/wiki/Install-Script">
      <img height="30" src="https://img.shields.io/badge/Install%20Script-222830?label=&logo=windowsterminal&logoColor=white&style=for-the-badge">
