@@ -22,7 +22,7 @@
     "format": "prettier --plugin-search-dir . --write .",
     "with-env": "dotenv -e .env.local --",
     "env:sync": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "vercel:build": "bun db:generate && bun db:deploy && bun vite:build",
+    "vercel:build": "~/.bun/bin/bun db:generate && ~/.bun/bin/bun db:deploy && ~/.bun/bin/bun vite:build",
     "storybook": "cross-env STORYBOOK=true storybook dev -p 6006 -s static",
     "storybook:build": "cross-env STORYBOOK=true storybook build -s static",
     "storybook:serve": "bun x serve storybook-static"
