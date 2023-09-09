@@ -32,27 +32,6 @@
 | 📚 **Inlang**: Internationalization Library | 📃 **Prettier & ESLint**: Code Formatting |
 | 🤖 **Vercel**: Deploy with CI | 🧩 **Dotenv**: Manage environment |
 |  |  |
-
- 
-  
- 
-  
- 
-  
- 
-
- 
- 
-
-
-  
- 
-
- 
-  
- 
-  
- 
   
 ## 🔌 Features
   
@@ -74,5 +53,10 @@
   
 ## Getting Started
   
-You can browse the [Github Wiki](https://github.com/albbus-stack/kit-stack/wiki) to get a better idea of how this works or you can jump right in using the [Install Script](https://github.com/albbus-stack/kit-stack/wiki/Install-Script).
+You can browse the [Github Wiki](https://github.com/albbus-stack/kit-stack/wiki) to get a better idea of how this works or you can jump right in using the [Install Script](https://github.com/albbus-stack/kit-stack/wiki/Install-Script). 
 
+The easiest and fastest way is to use a VSCode cloud instance like Gitpod or Github Codespaces, with them you can open the template directly and all the configurations are already handled:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/albbus-stack/kit-stack)
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/albbus-stack/kit-stack)
