@@ -1,3 +1,4 @@
+
 /**
  * @type { import("@inlang/core/config").DefineConfig }
  */
