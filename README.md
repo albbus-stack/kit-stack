@@ -1,7 +1,7 @@
 <p align="center">
      <img src="https://svgshare.com/i/vcw.svg" height="250"/>
      </br> </br>
-     A fullstack starter kit heavily inspired by <a href="https://create.t3.gg/">create-t3-app</a> with variuos added bonuses
+     A svelte fullstack starter kit heavily inspired by <a href="https://create.t3.gg/">create-t3-app</a> with variuos added bonuses
      </br> </br>
      <img src="https://img.shields.io/badge/SvelteKit-FF3F00?style=for-the-badge&logo=svelte&logoColor=white"/>&nbsp;&nbsp;
      <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>&nbsp;&nbsp;
@@ -11,13 +11,13 @@
 
  <p align="center">
   <a href="https://discord.gg/ExwxXtdUvh">
-     <img src="https://img.shields.io/discord/1149671113362776184?color=%235865F2&label=&logo=discord&logoColor=white&style=for-the-badge">
+     <img height="30" src="https://img.shields.io/discord/1149671113362776184?color=%235865F2&label=&logo=discord&logoColor=white&style=for-the-badge">
   </a>&nbsp;&nbsp;
   <a href="https://github.com/albbus-stack/kit-stack/wiki">
-     <img src="https://img.shields.io/badge/Wiki-cbf7cf?label=&logo=github&logoColor=black&style=for-the-badge">
+     <img height="30" src="https://img.shields.io/badge/Wiki-cbf7cf?label=&logo=github&logoColor=black&style=for-the-badge">
   </a>&nbsp;&nbsp;
   <a href="https://github.com/albbus-stack/kit-stack/wiki/Install-Script">
-     <img src="https://img.shields.io/badge/Install%20Script-222830?label=&logo=windowsterminal&logoColor=white&style=for-the-badge">
+     <img height="30" src="https://img.shields.io/badge/Install%20Script-222830?label=&logo=windowsterminal&logoColor=white&style=for-the-badge">
   </a>
  </p>
   
@@ -25,11 +25,11 @@
 
 |  |  |
 |--|--|
-| 🛠️ **SvelteKit**: Fullstack Framework | 🗃️ **Prisma**: Database ORM |
-| 🧹 **tRPC**: Typesafe API Calls | 🔐 **Supabase Auth**: Authentication |
-| 💳 **Stripe**: Payments API | 🎨 **DaisyUI**: Component Library |
-| 🖌 **Storybook**: UI Testing Tool | 📝 **Felte**: Form Validation |
-| 📚 **Inlang**: Internationalization Library | 📃 **Prettier & ESLint**: Code Formatting |
+| 🛠️ **SvelteKit**: Fullstack Framework | 🔐 **Supabase Auth**: Authentication |
+| 🗃️ **Prisma**: Database ORM | 🧹 **tRPC**: Typesafe API Calls |
+| 🎨 **DaisyUI**: Component Library | 🖌 **Storybook**: UI Testing Tool |
+| 💳 **Stripe**: Payments API | 📚 **Inlang**: Internationalization Library |
+| 📝 **Felte**: Form Validation | 📃 **Prettier & ESLint**: Code Formatting |
 | 🤖 **Vercel**: Deploy with CI | 🧩 **Dotenv**: Manage environment |
 |  |  |
   
@@ -57,6 +57,11 @@ You can browse the [Github Wiki](https://github.com/albbus-stack/kit-stack/wiki)
 
 The easiest and fastest way is to use a VSCode cloud instance like Gitpod or Github Codespaces, with them you can open the template directly and all the configurations are already handled:
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/albbus-stack/kit-stack)
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/albbus-stack/kit-stack)
+ <p>
+  <a href="https://codespaces.new/albbus-stack/kit-stack">
+     <img height="30" src="https://img.shields.io/badge/Open%20In%20Codespace-222830?label=&logo=github&logoColor=white&style=for-the-badge">
+  </a>&nbsp;&nbsp;
+  <a href="https://gitpod.io/#https://github.com/albbus-stack/kit-stack">
+     <img height="30" src="https://img.shields.io/badge/Open%20In%20Gitpod-f78a0a?label=&logo=gitpod&logoColor=white&style=for-the-badge">
+  </a>
+ </p>
