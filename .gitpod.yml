@@ -1,5 +1,6 @@
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
-  - init: pnpm install && pnpm db:generate && pnpm env:sync
-    command: pnpm run dev
-
-
+  - name: Install and Run with bun
+    command: bun install && bun db:generate && bun env:sync && bun dev
