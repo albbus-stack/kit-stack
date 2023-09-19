@@ -1,5 +1,9 @@
 tasks:
-  - init: curl -fsSL https://bun.sh/install | bash && source /home/gitpod/.bashrc
-
-  - name: Install and Run with bun
-    command: bun install && bun db:generate && cp .env.local.example .env.local && bun env:sync && bun dev
+  - name: Install and Setup with Bun
+    command: |
+      curl -fsSL https://bun.sh/install | bash 
+      source /home/gitpod/.bashrc
+      bun install
+      bun db:generate
+      cp .env.local.example .env.local
+      bun env:sync
