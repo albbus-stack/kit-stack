@@ -3,7 +3,6 @@
 		"esbenp.prettier-vscode",
 		"svelte.svelte-vscode",
 		"bradlc.vscode-tailwindcss",
-		"Prisma.prisma",
 		"pmneo.tsimporter",
 		"kuscamara.remove-unused-imports",
 		"inlang.vs-code-extension"

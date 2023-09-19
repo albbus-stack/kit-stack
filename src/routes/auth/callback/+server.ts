@@ -1,6 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { prisma } from '$lib/db';
+import { db } from '$lib/db';
+import { user } from '$lib/db/drizzle/schema';
 
 // Handles the callback from the OAuth provider, receiving a certain code that can be exhanged for a session
 export const GET: RequestHandler = async ({ url, locals: { supabase } }) => {
@@ -10,15 +11,13 @@ export const GET: RequestHandler = async ({ url, locals: { supabase } }) => {
 		await supabase.auth.exchangeCodeForSession(code);
 	}
 
-	const user = await supabase.auth.getUser();
+	const userData = (await supabase.auth.getUser()).data;
 
-	if (!user.data?.user?.email) throw redirect(302, '/');
+	if (!userData?.user?.email) throw redirect(302, '/');
 
-	await prisma.user.create({
-		data: {
-			email: user.data.user.email,
-			id: user.data.user.id
-		}
+	await db.insert(user).values({
+		email: userData.user.email,
+		id: userData.user.id
 	});
 
 	throw redirect(301, '/');

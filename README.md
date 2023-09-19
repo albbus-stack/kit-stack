@@ -26,7 +26,7 @@
 |  |  |
 |--|--|
 | 🛠️ **SvelteKit**: Fullstack Framework | 🔐 **Supabase Auth**: Authentication |
-| 🗃️ **Prisma**: Database ORM | 🧹 **tRPC**: Typesafe API Calls |
+| 🗃️ **Drizzle**: Database ORM | 🧹 **tRPC**: Typesafe API Calls |
 | 🎨 **DaisyUI**: Component Library | 🖌 **Storybook**: UI Testing Tool |
 | 💳 **Stripe**: Payments API | 📚 **Inlang**: Internationalization Library |
 | 📝 **Felte**: Form Validation | 📃 **Prettier & ESLint**: Code Formatting |
