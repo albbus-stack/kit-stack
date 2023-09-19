@@ -35,7 +35,7 @@
     "@storybook/sveltekit": "^7.4.0",
     "@storybook/testing-library": "^0.2.0",
     "@stripe/stripe-js": "^2.1.2",
-    "@sveltejs/adapter-auto": "^2.1.0",
+    "@sveltejs/adapter-vercel": "^3.0.3",
     "@sveltejs/kit": "^1.24.1",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
