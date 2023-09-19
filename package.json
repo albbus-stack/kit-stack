@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "prisma": {
-    "schema": "src/lib/db/prisma/schema.prisma"
-  },
   "scripts": {
     "dev": "pnpm db:generate && pnpm vite:dev",
     "build": "pnpm db:generate && pnpm vite:build",
@@ -28,7 +25,6 @@
   },
   "devDependencies": {
     "@inlang/sdk-js": "^0.11.8",
-    "@prisma/client": "5.2.0",
     "@storybook/addon-actions": "^7.4.0",
     "@storybook/addon-essentials": "^7.4.0",
     "@storybook/addon-interactions": "^7.4.0",

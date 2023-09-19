@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { trpc } from '$lib/trpc/client';
-	import type { Post } from '@prisma/client';
 	import { TRPCClientError } from '@trpc/client';
 	import { Icon, ArrowLeft } from 'svelte-hero-icons';
 	import { disableScrollHandling } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import type { Post } from '$lib/db/drizzle/schema';
 
 	onMount(async () => {
 		disableScrollHandling();
