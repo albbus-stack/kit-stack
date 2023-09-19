@@ -1,8 +1,8 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"installCommand": "pnpm install",
-	"devCommand": "pnpm dev",
-	"buildCommand": "pnpm vercel:build",
+	"installCommand": "curl -fsSL https://bun.sh/install | bash && ~/.bun/bin/bun install --frozen-lockfile",
+	"devCommand": "~/.bun/bin/bun dev",
+	"buildCommand": "~/.bun/bin/bun vercel:build",
 	"framework": "sveltekit",
 	"outputDirectory": ".svelte-kit/output"
 }
