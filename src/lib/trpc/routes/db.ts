@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { protectedProcedure, router } from '../trpc';
 import { TRPCClientError } from '@trpc/client';
+import { post } from '$lib/db/drizzle/schema';
+import { eq } from 'drizzle-orm';
 
 export const dbRouter = router({
 	greeting: protectedProcedure.query(async () => {
@@ -14,7 +16,7 @@ export const dbRouter = router({
 			})
 		)
 		.mutation(async ({ ctx, input }) => {
-			const { user, prisma } = ctx;
+			const { user, db } = ctx;
 
 			// REMOVE THIS CHECK
 			// It prevents post creation spamming on the live demo
@@ -22,24 +24,18 @@ export const dbRouter = router({
 				throw new TRPCClientError("You are not authorized to create a post.")
 			}
 
-			const post = await prisma.post.create({
-				data: {
-					title: input.title,
-					content: input.content,
-					author: {
-						connect: {
-							id: ctx.user
-						}
-					}
-				}
-			});
+			const p = await db.insert(post).values({
+				title: input.title,
+				content: input.content,
+				authorId: ctx.user
+			}).returning();
 
-			return post;
+			return p;
 		}),
 	getPosts: protectedProcedure.query(async ({ ctx }) => {
-		const { prisma } = ctx;
+		const { db } = ctx;
 
-		const posts = await prisma.post.findMany();
+		const posts = await db.query.post.findMany();
 
 		return posts;
 	}),
@@ -52,31 +48,22 @@ export const dbRouter = router({
 			})
 		)
 		.mutation(async ({ ctx, input }) => {
-			const { prisma } = ctx;
+			const { db } = ctx;
 
-			const post = await prisma.post.update({
-				where: {
-					id: input.postId
-				},
-				data: {
-					title: input.title,
-					content: input.content
-				}
-			});
+			const p = await db.update(post).set({
+				title: input.title,
+				content: input.content
+			}).where(eq(post.id, input.postId)).returning();
 
-			return post;
+			return p;
 		}),
 	deletePost: protectedProcedure
 		.input(z.object({ postId: z.number() }))
 		.mutation(async ({ ctx, input }) => {
-			const { prisma } = ctx;
+			const { db } = ctx;
 
-			const post = await prisma.post.delete({
-				where: {
-					id: input.postId
-				}
-			});
+			const p = await db.delete(post).where(eq(post.id, input.postId));
 
-			return post;
+			return p;
 		})
 });

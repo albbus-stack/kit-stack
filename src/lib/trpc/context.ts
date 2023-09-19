@@ -1,5 +1,5 @@
 import { SECRET_STRIPE_KEY } from '$env/static/private';
-import { prisma } from '$lib/db';
+import { db } from '$lib/db';
 import type { RequestEvent } from '@sveltejs/kit';
 import type { inferAsyncReturnType } from '@trpc/server';
 import Stripe from 'stripe';
@@ -19,7 +19,7 @@ export async function createContext(event: RequestEvent) {
 	};
 
 	return {
-		prisma,
+		db,
 		stripe,
 		user: await getUser()
 	};
