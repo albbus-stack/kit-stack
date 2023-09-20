@@ -1,10 +1,11 @@
 <script lang="ts">
 	import '@fontsource/montserrat-alternates';
 	import '../global.css';
-
+	
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
+	import { cubicIn, cubicOut } from 'svelte/easing'
 
 	export let data;
 
@@ -25,7 +26,7 @@
 </script>
 
 {#key data.url}
-	<div in:fade={{ duration: 300, delay: 400 }} out:fade={{ duration: 300 }}>
+	<div in:fly={{ easing: cubicOut, duration: 250, delay: 350, y: 10 }} out:fly={{easing: cubicIn, duration: 250, y:-10 }}>
 		<slot />
 	</div>
 {/key}
