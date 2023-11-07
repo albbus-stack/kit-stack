@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/svelte';
-
 import { withThemeByDataAttribute } from "@storybook/addon-styling";
 
 import '../src/global.css';

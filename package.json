@@ -19,8 +19,8 @@
     "with-env": "dotenv -e .env.local --",
     "env:sync": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "vercel:build": "~/.bun/bin/bun db:push && ~/.bun/bin/bun vite:build",
-    "storybook": "cross-env STORYBOOK=true storybook dev -p 6006 -s static",
-    "storybook:build": "cross-env STORYBOOK=true storybook build -s static",
+    "storybook": "cross-env STORYBOOK=true storybook dev -p 6006 -s ../static",
+    "storybook:build": "cross-env STORYBOOK=true storybook build -s ../static",
     "storybook:serve": "bun x serve storybook-static"
   },
   "devDependencies": {

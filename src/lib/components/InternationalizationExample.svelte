@@ -5,16 +5,16 @@
 	let title = m.title();
 
 	function toggleLanguages() {
-		console.log(languageTag());
-		console.log(m.title());
 		title = m.title();
 		if (languageTag() === 'it') setLanguageTag('en');
 		else setLanguageTag('it');
 	}
 </script>
 
-<p>{title}</p>
+<div class="flex flex-col items-center gap-4">
+	<p>{title}</p>
 
-<button class="btn btn-primary w-[250px]" on:click={toggleLanguages}>
-	{languageTag() === 'it' ? 'EN' : 'IT'}
-</button>
+	<button class="btn btn-primary w-[250px]" on:click={toggleLanguages}>
+		{languageTag() === 'it' ? 'EN' : 'IT'}
+	</button>
+</div>
