@@ -3,7 +3,6 @@
 	import { trpc } from '$lib/trpc/client';
 	import { TRPCClientError } from '@trpc/client';
 	import { Icon, ArrowLeft } from 'svelte-hero-icons';
-	import { onMount } from 'svelte';
 	import type { Post } from '$lib/db/drizzle/schema';
 
 	let loading = false;
@@ -79,10 +78,12 @@
 	$: {
 		loadPosts();
 	}
+
+	export let data;
 </script>
 
 <div class="card w-full flex-col items-center justify-center gap-10 p-10">
-	<a href="/" role="button" class="btn btn-primary self-start">
+	<a href={data.localeUrl} role="button" class="btn btn-primary self-start">
 		<Icon class="w-7" src={ArrowLeft} />
 	</a>
 	<div class="card mx-auto min-w-[250px] flex-col items-center gap-5">

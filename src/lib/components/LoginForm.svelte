@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from '../../routes/$types';
+	import type { PageData } from '../../routes/[lang]/$types';
 	import { createForm } from 'felte';
 	import { validator } from '@felte/validator-zod';
 	import { reporter, ValidationMessage } from '@felte/reporter-svelte';

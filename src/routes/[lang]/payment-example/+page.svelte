@@ -58,12 +58,14 @@
 			processing = false;
 		} else {
 			// Redirect to a success page
-			goto('/');
+			goto(data.localeUrl);
 		}
 	}
+
+	export let data;
 </script>
 
-<a href="/" role="button" class="btn btn-primary m-10 mb-5">
+<a href={data.localeUrl} role="button" class="btn btn-primary m-10 mb-5">
 	<Icon class="w-7" src={ArrowLeft} />
 </a>
 

@@ -1,6 +1,7 @@
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { createSupabaseLoadClient } from '@supabase/auth-helpers-sveltekit';
 import type { LayoutLoadEvent } from './$types';
+import { redirect } from '@sveltejs/kit';
 
 export const load = async ({ fetch, data, depends, url }: LayoutLoadEvent) => {
 	depends('supabase:auth');
@@ -17,5 +18,12 @@ export const load = async ({ fetch, data, depends, url }: LayoutLoadEvent) => {
 		data: { session }
 	} = await supabase.auth.getSession();
 
-	return { supabase, session, url: url.pathname };
+	if(!url.pathname.split("/")[1]){
+		throw redirect(302, '/en');
+	}
+
+	const locale = url.pathname.split("/")[1];
+	const localeUrl = "/" + locale;
+
+	return { supabase, session, locale, localeUrl };
 };
