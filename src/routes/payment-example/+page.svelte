@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { loadStripe, type Stripe, type StripeError } from '@stripe/stripe-js';
+	import { loadStripe, type PaymentIntentResult, type Stripe, type StripeError } from '@stripe/stripe-js';
 	import { PUBLIC_STRIPE_KEY } from '$env/static/public';
 	import { Elements, PaymentElement, LinkAuthenticationElement, Address } from 'svelte-stripe';
 	import { trpc } from '$lib/trpc/client';
@@ -9,18 +9,19 @@
 	import { TRPCClientError } from '@trpc/client';
 	import type { PaymentIntent } from '$lib/trpc/routes/payments';
 	import { ArrowLeft, Icon } from 'svelte-hero-icons';
-	import { disableScrollHandling } from '$app/navigation';
 
 	let paymentAmount = 200;
 
-	let stripe: Stripe | null = null;
+	// This should be of type "Stripe | null" but is "any"
+	// since there is a bug in svelte-stripe.
+	let stripe: any = null;
+
 	let clientSecret: string | null = null;
 	let error: StripeError | null = null;
 	let elements: any;
 	let processing = false;
 
 	onMount(async () => {
-		disableScrollHandling();
 		stripe = await loadStripe(PUBLIC_STRIPE_KEY);
 		clientSecret = await createPaymentIntent();
 	});
@@ -44,11 +45,12 @@
 		if (processing) return;
 		processing = true;
 
-		// Confirm the payment that was created server side
-		const result = await stripe?.confirmPayment({
+		// Confirm the payment that was created server side, 
+		// the type cast is necessary since stripe is of type "any".
+		const result = (await stripe?.confirmPayment({
 			elements,
 			redirect: 'if_required'
-		});
+		})) as PaymentIntentResult;
 
 		if (result?.error) {
 			// Show the error to the user
@@ -78,7 +80,7 @@
 			on:submit|preventDefault={submitForm}
 		>
 			<LinkAuthenticationElement />
-			<PaymentElement />
+			<PaymentElement options={{}}/>
 			<!-- Listing all the following props is needed for typescript not to complain -->
 			<Address
 				mode="billing"

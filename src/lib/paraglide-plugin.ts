@@ -1,8 +1,12 @@
+// This is a temporary file until the official 
+// svelte-kit adapter for paraglide-js gets released.
+
 import type { PluginOption } from 'vite';
 import { exec } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let cachedSettings: any = undefined;
 
 export const paraglideJsVitePlugin = (config: {
