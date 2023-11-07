@@ -1,8 +1,19 @@
+import { paraglideJsVitePlugin } from './src/lib/paraglide-plugin';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
-import inlangPlugin from "@inlang/sdk-js/adapter-sveltekit"
-
 export default defineConfig({
-	plugins: [inlangPlugin(), sveltekit()]
+	optimizeDeps: {
+		exclude: ['@inlang/paraglide-js']
+	},
+	ssr: {
+		noExternal: ['@inlang/paraglide-js']
+	},
+	plugins: [
+		sveltekit(),
+		paraglideJsVitePlugin({
+			namespace: "kit-stack",
+			settingsPath: "./project.inlang.json",
+		}),
+	],
 });

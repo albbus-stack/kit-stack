@@ -5,13 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "bun db:generate && bun vite:dev",
-    "build": "bun db:generate && bun vite:build",
+    "build": "bun lang:sync && bun db:generate && bun vite:build",
     "vite:dev": "bun with-env vite dev",
     "vite:build": "bun with-env vite build",
     "db:generate": "bun with-env drizzle-kit generate:pg",
     "db:push": "bun with-env drizzle-kit push:pg",
     "db:studio": "bun with-env drizzle-kit studio",
     "lang:studio": "bun x @inlang/cli open editor",
+    "lang:sync": "paraglide-js compile --project ./project.inlang.json --namespace kit-stack",
     "preview": "bun with-env vite preview",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
@@ -80,6 +81,7 @@
     "postgres": "^3.3.5",
     "superjson": "^1.13.1",
     "trpc-sveltekit": "^3.5.20",
-    "zod": "^3.22.2"
+    "zod": "^3.22.2",
+    "@inlang/paraglide-js": "1.0.0-prerelease.5"
   }
 }

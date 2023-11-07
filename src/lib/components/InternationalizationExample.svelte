@@ -1,16 +1,20 @@
 <script lang="ts">
-	import { i } from '@inlang/sdk-js';
-	import { language } from '@inlang/sdk-js';
-	import { switchLanguage } from '@inlang/sdk-js';
+	import * as m from '@inlang/paraglide-js/kit-stack/messages';
+	import { setLanguageTag, languageTag } from '@inlang/paraglide-js/kit-stack';
 
-	async function toggleLanguages() {
-		if (language === 'it') await switchLanguage('en');
-		else await switchLanguage('it');
+	let title = m.title();
+
+	function toggleLanguages() {
+		console.log(languageTag());
+		console.log(m.title());
+		title = m.title();
+		if (languageTag() === 'it') setLanguageTag('en');
+		else setLanguageTag('it');
 	}
 </script>
 
-<p>{i('title')}</p>
+<p>{title}</p>
 
 <button class="btn btn-primary w-[250px]" on:click={toggleLanguages}>
-	{language === 'it' ? 'EN' : 'IT'}
+	{languageTag() === 'it' ? 'EN' : 'IT'}
 </button>
