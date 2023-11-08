@@ -6,7 +6,7 @@
 	import { onMount } from "svelte";
 	import { fly } from "svelte/transition";
 	import { cubicIn, cubicOut } from "svelte/easing";
-	import { setLanguageTag, onSetLanguageTag, type AvailableLanguageTag } from "@inlang/paraglide-js/kit-stack";
+	import { setLanguageTag, onSetLanguageTag, type AvailableLanguageTag } from "../paraglide/runtime";
 	import { browser } from "$app/environment";
 
 	export let data;

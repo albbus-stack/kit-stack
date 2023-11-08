@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as m from '@inlang/paraglide-js/kit-stack/messages';
+	import * as m from '../../paraglide/messages';
 	import LanguageSwitch from './LanguageSwitch.svelte';
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { setLanguageTag, languageTag, type AvailableLanguageTag, availableLanguageTags} from '@inlang/paraglide-js/kit-stack';
+	import { setLanguageTag, languageTag, type AvailableLanguageTag, availableLanguageTags} from '../../paraglide/runtime';
 
 	let lang: AvailableLanguageTag = languageTag()
 

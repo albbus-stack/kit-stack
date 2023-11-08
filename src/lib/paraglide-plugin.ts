@@ -1,21 +1,15 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 // This is a temporary file until the official 
 // svelte-kit adapter for paraglide-js gets released.
 
-import type { PluginOption } from 'vite';
 import { exec } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-let cachedSettings: any = undefined;
+let cachedSettings = undefined;
 
-export const paraglideJsVitePlugin = (config: {
-	settingsPath: string;
-	namespace: string;
-	silent?: boolean;
-	timeout?: number;
-	onInit?: boolean;
-}): PluginOption => {
+export const paraglideJsVitePlugin = (config) => {
 	const options = {
 		silent: false,
 		timeout: 500,
@@ -27,7 +21,7 @@ export const paraglideJsVitePlugin = (config: {
 
 	const execute = () => {
 		exec(
-			`paraglide-js compile --namespace ${options.namespace} --project ${options.settingsPath}`,
+			`paraglide-js compile --project ${options.settingsPath}`,
 			(exception, output, error) => {
 				if (!options.silent && output) console.log(output);
 				if (!options.silent && error) console.error(error);
@@ -57,7 +51,7 @@ export const paraglideJsVitePlugin = (config: {
 			setTimeout(() => (throttled = false), options.timeout);
 
 			let filePath =
-				cachedSettings && (cachedSettings['plugin.inlang.messageFormat']?.filePath as string);
+				cachedSettings && (cachedSettings['plugin.inlang.messageFormat']?.filePath);
 			if (!filePath) {
 				console.warn(
 					'No `filePath` found in `project.inlang.json` settings. Skipping paraglide-js compilation.'
@@ -72,7 +66,7 @@ export const paraglideJsVitePlugin = (config: {
 			if (file === filePath) {
 				console.info(
 					'Running',
-					`paraglide-js compile --namespace ${options.namespace} --project ${options.settingsPath}`,
+					`paraglide-js compile --project ${options.settingsPath}`,
 					'with filePath:',
 					filePath,
 					'\n'
