@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { fly } from "svelte/transition";
+	import { cubicIn, cubicOut } from "svelte/easing";
+	
 	import "@fontsource/montserrat-alternates";
 	import "../global.css";
 
@@ -23,4 +26,11 @@
 	});
 </script>
 
-<slot />
+{#key data.url}
+	<div
+		in:fly={{ easing: cubicOut, duration: 250, delay: 350, y: 10 }}
+		out:fly={{ easing: cubicIn, duration: 250, y: -10 }}
+	>
+		<slot />
+	</div>
+{/key}

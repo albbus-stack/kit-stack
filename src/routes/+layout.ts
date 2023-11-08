@@ -25,5 +25,5 @@ export const load = async ({ fetch, data, depends, url }: LayoutLoadEvent) => {
 	const locale = url.pathname.split("/")[1];
 	const localeUrl = "/" + locale;
 
-	return { supabase, session, locale, localeUrl };
+	return { supabase, session, locale, localeUrl, url: url.pathname };
 };

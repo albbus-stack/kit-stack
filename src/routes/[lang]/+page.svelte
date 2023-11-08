@@ -2,7 +2,6 @@
 	import LoginForm from '$lib/components/LoginForm.svelte';
 	import TrpcButtons from '$lib/components/TrpcButtons.svelte';
 	import InternationalizationExample from '$lib/components/InternationalizationExample.svelte';
-	//import { type AvailableLanguageTag } from '@inlang/paraglide-js/kit-stack';
 
 	export let data;
     const locale = data.locale as any

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { setLanguageTag, type AvailableLanguageTag, availableLanguageTags} from '@inlang/paraglide-js/kit-stack';
+	import { setLanguageTag, type AvailableLanguageTag, availableLanguageTags} from '../../paraglide/runtime';
 	import { browser } from "$app/environment";
 
     export let locale: AvailableLanguageTag;

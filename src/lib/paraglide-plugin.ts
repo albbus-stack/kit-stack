@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+//@ts-nocheck
 // This is a temporary file until the official 
 // svelte-kit adapter for paraglide-js gets released.
 
@@ -27,7 +29,7 @@ export const paraglideJsVitePlugin = (config: {
 
 	const execute = () => {
 		exec(
-			`paraglide-js compile --namespace ${options.namespace} --project ${options.settingsPath}`,
+			`paraglide-js compile --project ${options.settingsPath}`,
 			(exception, output, error) => {
 				if (!options.silent && output) console.log(output);
 				if (!options.silent && error) console.error(error);
@@ -72,7 +74,7 @@ export const paraglideJsVitePlugin = (config: {
 			if (file === filePath) {
 				console.info(
 					'Running',
-					`paraglide-js compile --namespace ${options.namespace} --project ${options.settingsPath}`,
+					`paraglide-js compile --project ${options.settingsPath}`,
 					'with filePath:',
 					filePath,
 					'\n'

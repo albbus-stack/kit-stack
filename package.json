@@ -12,7 +12,7 @@
     "db:push": "bun with-env drizzle-kit push:pg",
     "db:studio": "bun with-env drizzle-kit studio",
     "lang:studio": "bun x @inlang/cli open editor",
-    "lang:build": "paraglide-js compile --project ./project.inlang.json --namespace kit-stack",
+    "lang:build": "paraglide-js compile --project ./project.inlang.json",
     "preview": "bun with-env vite preview",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
@@ -82,6 +82,6 @@
     "superjson": "^2.2.0",
     "trpc-sveltekit": "^3.5.22",
     "zod": "^3.22.4",
-    "@inlang/paraglide-js": "1.0.0-prerelease.5"
+    "@inlang/paraglide-js": "1.0.0-prerelease.6"
   }
 }
