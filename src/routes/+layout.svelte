@@ -2,12 +2,17 @@
 	import "@fontsource/montserrat-alternates";
 	import "../global.css";
 
-	import { invalidate } from "$app/navigation";
-	import { onMount } from "svelte";
+	import { afterNavigate, invalidate } from "$app/navigation";
 	import { fly } from "svelte/transition";
 	import { cubicIn, cubicOut } from "svelte/easing";
 	import { setLanguageTag, onSetLanguageTag, type AvailableLanguageTag } from "../paraglide/runtime";
 	import { browser } from "$app/environment";
+	import { onMount } from 'svelte';
+	import { disableScrollHandling } from '$app/navigation';
+
+	afterNavigate(() => {
+		disableScrollHandling();
+	});
 
 	export let data;
 	let languageTag: AvailableLanguageTag;
