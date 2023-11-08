@@ -10,8 +10,8 @@
  </p>
 
  <p align="center">
-  <a href="https://discord.gg/ExwxXtdUvh">
-     <img height="30" src="https://img.shields.io/discord/1149671113362776184?color=%235865F2&label=&logo=discord&logoColor=white&style=for-the-badge">
+  <a href="https://discord.gg/3JQHrs6juK">
+     <img height="30" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2F3JQHrs6juK%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&color=%235865F2&label=&suffix=%20members&logo=discord&logoColor=white&style=for-the-badge">
   </a>&nbsp;&nbsp;
   <a href="https://github.com/albbus-stack/kit-stack/wiki">
      <img height="30" src="https://img.shields.io/badge/Wiki-035757?label=&logo=github&style=for-the-badge">
