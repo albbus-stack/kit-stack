@@ -5,21 +5,22 @@
   "private": true,
   "scripts": {
     "dev": "bun db:generate && bun vite:dev",
-    "build": "bun db:generate && bun vite:build",
+    "build": "bun lang:build && bun db:generate && bun vite:build",
     "vite:dev": "bun with-env vite dev",
     "vite:build": "bun with-env vite build",
     "db:generate": "bun with-env drizzle-kit generate:pg",
     "db:push": "bun with-env drizzle-kit push:pg",
     "db:studio": "bun with-env drizzle-kit studio",
     "lang:studio": "bun x @inlang/cli open editor",
+    "lang:build": "paraglide-js compile --project ./project.inlang.json",
     "preview": "bun with-env vite preview",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
     "with-env": "dotenv -e .env.local --",
     "env:sync": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "vercel:build": "~/.bun/bin/bun db:push && ~/.bun/bin/bun vite:build",
-    "storybook": "cross-env STORYBOOK=true storybook dev -p 6006 -s static",
-    "storybook:build": "cross-env STORYBOOK=true storybook build -s static",
+    "vercel:build": "~/.bun/bin/bun lang:build && ~/.bun/bin/bun db:push && ~/.bun/bin/bun vite:build",
+    "storybook": "cross-env STORYBOOK=true storybook dev -p 6006 -s ../static",
+    "storybook:build": "cross-env STORYBOOK=true storybook build -s ../static",
     "storybook:serve": "bun x serve storybook-static"
   },
   "devDependencies": {
@@ -80,6 +81,7 @@
     "postgres": "^3.4.3",
     "superjson": "^2.2.0",
     "trpc-sveltekit": "^3.5.22",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "@inlang/paraglide-js": "1.0.0-prerelease.6"
   }
 }

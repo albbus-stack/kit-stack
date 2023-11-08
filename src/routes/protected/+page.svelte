@@ -1,11 +1,6 @@
 <script>
 	import { ArrowLeft, Icon } from 'svelte-hero-icons';
-	import { disableScrollHandling } from '$app/navigation';
 	import { onMount } from 'svelte';
-
-	onMount(async () => {
-		disableScrollHandling();
-	});
 </script>
 
 <div class="flex h-screen w-screen flex-col items-center gap-10 p-10">

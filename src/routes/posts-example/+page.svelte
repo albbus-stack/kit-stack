@@ -3,13 +3,8 @@
 	import { trpc } from '$lib/trpc/client';
 	import { TRPCClientError } from '@trpc/client';
 	import { Icon, ArrowLeft } from 'svelte-hero-icons';
-	import { disableScrollHandling } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import type { Post } from '$lib/db/drizzle/schema';
-
-	onMount(async () => {
-		disableScrollHandling();
-	});
 
 	let loading = false;
 	let error = '';

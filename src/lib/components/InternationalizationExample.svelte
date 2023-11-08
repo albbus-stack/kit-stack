@@ -1,16 +1,10 @@
 <script lang="ts">
-	import { i } from '@inlang/sdk-js';
-	import { language } from '@inlang/sdk-js';
-	import { switchLanguage } from '@inlang/sdk-js';
-
-	async function toggleLanguages() {
-		if (language === 'it') await switchLanguage('en');
-		else await switchLanguage('it');
-	}
+	import * as m from '../../paraglide/messages';
+	import LanguageSwitch from './LanguageSwitch.svelte';
 </script>
 
-<p>{i('title')}</p>
+<div class="flex flex-col items-center gap-4">
+	<p>{m.title()}</p>
 
-<button class="btn btn-primary w-[250px]" on:click={toggleLanguages}>
-	{language === 'it' ? 'EN' : 'IT'}
-</button>
+	<LanguageSwitch />
+</div>

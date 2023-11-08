@@ -2,12 +2,6 @@
 	import LoginForm from '$lib/components/LoginForm.svelte';
 	import TrpcButtons from '$lib/components/TrpcButtons.svelte';
 	import InternationalizationExample from '$lib/components/InternationalizationExample.svelte';
-	import { disableScrollHandling } from '$app/navigation';
-	import { onMount } from 'svelte';
-
-	onMount(async () => {
-		disableScrollHandling();
-	});
 
 	export let data;
 </script>

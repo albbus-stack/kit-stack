@@ -1,0 +1,31 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "data": [
+    {
+      "id": "title",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Welcome!"
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "it",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Benvenuto!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

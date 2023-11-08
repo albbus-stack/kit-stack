@@ -1,26 +1,19 @@
 {
-    "sourceLanguageTag": "en",
-    "languageTags": ["en", "it"],
-    "modules": [
-        "https://cdn.jsdelivr.net/npm/@inlang/plugin-json@3/dist/index.js",
-        "https://cdn.jsdelivr.net/npm/@inlang/sdk-js-plugin@3/dist/index.js",
-        "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-empty-pattern@1/dist/index.js",
-        "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-identical-pattern@1/dist/index.js",
-        "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-without-source@1/dist/index.js",
-        "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-missing-translation@1/dist/index.js"
-    ],
-    "settings": {
-        "inlang.plugin.json": {
-            "pathPattern": "./languages/{language}.json"
-        },
-        "inlang.plugin.sdkJs": {
-            "languageNegotiation": {
-                "strategies": [
-                    {
-                        "type": "localStorage"
-                    }
-                ]
-            }
-        }
-    }
+  "$schema": "https://inlang.com/schema/project-settings",
+  "sourceLanguageTag": "en",
+  "languageTags": [
+    "en",
+    "it"
+  ],
+  "modules": [
+    "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-empty-pattern@latest/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-identical-pattern@latest/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-missing-translation@latest/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-without-source@latest/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/plugin-message-format@latest/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/plugin-m-function-matcher@latest/dist/index.js"
+  ],
+  "plugin.inlang.messageFormat": {
+    "filePath": "./messages.json"
+  }
 }

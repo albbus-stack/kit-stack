@@ -1,0 +1,78 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+// This is a temporary file until the official 
+// svelte-kit adapter for paraglide-js gets released.
+
+import { exec } from 'node:child_process';
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+
+let cachedSettings = undefined;
+
+export const paraglideJsVitePlugin = (config) => {
+	const options = {
+		silent: false,
+		timeout: 500,
+		onInit: true,
+		...config
+	};
+
+	let throttled = false;
+
+	const execute = () => {
+		exec(
+			`paraglide-js compile --project ${options.settingsPath}`,
+			(exception, output, error) => {
+				if (!options.silent && output) console.log(output);
+				if (!options.silent && error) console.error(error);
+			}
+		);
+	};
+
+	return {
+		name: 'vite-plugin-paraglide-js-watcher',
+
+		async buildStart() {
+			if (!cachedSettings) {
+				const settingsContent = await readFile(options.settingsPath, 'utf-8');
+				cachedSettings = JSON.parse(settingsContent);
+			}
+
+			if (options.onInit) {
+				execute();
+			}
+		},
+
+		async handleHotUpdate({ file }) {
+			if (throttled) return;
+
+			throttled = true;
+
+			setTimeout(() => (throttled = false), options.timeout);
+
+			let filePath =
+				cachedSettings && (cachedSettings['plugin.inlang.messageFormat']?.filePath);
+			if (!filePath) {
+				console.warn(
+					'No `filePath` found in `project.inlang.json` settings. Skipping paraglide-js compilation.'
+				);
+				return;
+			}
+
+			if (!filePath.startsWith('/')) {
+				filePath = resolve(process.cwd(), filePath);
+			}
+
+			if (file === filePath) {
+				console.info(
+					'Running',
+					`paraglide-js compile --project ${options.settingsPath}`,
+					'with filePath:',
+					filePath,
+					'\n'
+				);
+				execute();
+			}
+		}
+	};
+};
