@@ -13,7 +13,9 @@
 
 	let paymentAmount = 200;
 
-	let stripe: Stripe | null = null;
+	// This should be of type "Stripe | null" but is "any"
+	// since there is a bug in svelte-stripe.
+	let stripe: any = null;
 	let clientSecret: string | null = null;
 	let error: StripeError | null = null;
 	let elements: any;
@@ -78,7 +80,7 @@
 			on:submit|preventDefault={submitForm}
 		>
 			<LinkAuthenticationElement />
-			<PaymentElement />
+			<PaymentElement options={{}}/>
 			<!-- Listing all the following props is needed for typescript not to complain -->
 			<Address
 				mode="billing"

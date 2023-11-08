@@ -4,4 +4,7 @@ import * as schema from './drizzle/schema';
 import postgres from "postgres"
  
 const client = postgres(DATABASE_URL)
-export const db = drizzle(client, { schema });
+
+// This is a bug in the drizzle types against the postgres ones.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const db = drizzle(client as any, { schema });
