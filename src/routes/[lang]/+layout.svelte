@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { disableScrollHandling } from '$app/navigation';
-	import { onMount } from 'svelte';
+	import { afterNavigate, disableScrollHandling } from '$app/navigation';
 
-	onMount(async () => {
+	afterNavigate(async () => {
 		disableScrollHandling();
 	});
 </script>
