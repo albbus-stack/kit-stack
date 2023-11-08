@@ -15,7 +15,7 @@
 	// This should be of type "Stripe | null" but is "any"
 	// since there is a bug in svelte-stripe.
 	let stripe: any = null;
-
+	
 	let clientSecret: string | null = null;
 	let error: StripeError | null = null;
 	let elements: any;
