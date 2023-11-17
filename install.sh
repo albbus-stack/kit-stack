@@ -21,7 +21,6 @@ echo
 rm -rf .git LICENSE install.sh install.ps1
 mv .env.local.example .env.local
 
-echo
 echo -e "\033[1;32m🥯 Installing dependencies\033[0m"
 echo 
 
