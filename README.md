@@ -53,7 +53,11 @@
   
 ## Getting Started
   
-You can browse the [Github Wiki](https://github.com/albbus-stack/kit-stack/wiki) to get a better idea of how this works or you can jump right in using the [Install Script](https://github.com/albbus-stack/kit-stack/wiki/Install-Script). 
+You can browse the [Github Wiki](https://github.com/albbus-stack/kit-stack/wiki) to get a better idea of how this works or you can jump right in using the [Install Script](https://github.com/albbus-stack/kit-stack/wiki/Install-Script):
+
+```bash 
+curl -sL https://raw.githubusercontent.com/albbus-stack/kit-stack/main/install.sh | bash -s "<folderName>"
+```
 
 The easiest and fastest way is to use a VSCode cloud instance like Gitpod or Github Codespaces, with them you can open the template directly and all the configurations are already handled, but I highly recommend you create your own repo first locally:
 
