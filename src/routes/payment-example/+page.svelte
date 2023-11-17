@@ -80,7 +80,7 @@
 			on:submit|preventDefault={submitForm}
 		>
 			<LinkAuthenticationElement />
-			<PaymentElement />
+			<PaymentElement options={{}}/>
 			<!-- Listing all the following props is needed for typescript not to complain -->
 			<Address
 				mode="billing"
