@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-// This is a temporary file until the official 
+// This is a temporary file until the official
 // svelte-kit adapter for paraglide-js gets released.
 
 import { exec } from 'node:child_process';
@@ -20,13 +20,10 @@ export const paraglideJsVitePlugin = (config) => {
 	let throttled = false;
 
 	const execute = () => {
-		exec(
-			`paraglide-js compile --project ${options.settingsPath}`,
-			(exception, output, error) => {
-				if (!options.silent && output) console.log(output);
-				if (!options.silent && error) console.error(error);
-			}
-		);
+		exec(`paraglide-js compile --project ${options.settingsPath}`, (exception, output, error) => {
+			if (!options.silent && output) console.log(output);
+			if (!options.silent && error) console.error(error);
+		});
 	};
 
 	return {
@@ -43,15 +40,16 @@ export const paraglideJsVitePlugin = (config) => {
 			}
 		},
 
-		async handleHotUpdate({ file }) {
+		async handleHotUpdate({ file }: { file: string }) {
 			if (throttled) return;
 
 			throttled = true;
 
 			setTimeout(() => (throttled = false), options.timeout);
 
-			let filePath =
-				cachedSettings && (cachedSettings['plugin.inlang.messageFormat']?.filePath);
+			let filePath: string =
+				cachedSettings && cachedSettings['plugin.inlang.messageFormat']?.pathPattern;
+			filePath = filePath.replace('{languageTag}.json', '');
 			if (!filePath) {
 				console.warn(
 					'No `filePath` found in `project.inlang.json` settings. Skipping paraglide-js compilation.'
@@ -63,14 +61,7 @@ export const paraglideJsVitePlugin = (config) => {
 				filePath = resolve(process.cwd(), filePath);
 			}
 
-			if (file === filePath) {
-				console.info(
-					'Running',
-					`paraglide-js compile --project ${options.settingsPath}`,
-					'with filePath:',
-					filePath,
-					'\n'
-				);
+			if (file.slice(0, file.lastIndexOf('/')) === filePath) {
 				execute();
 			}
 		}
