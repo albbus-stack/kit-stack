@@ -20,10 +20,10 @@
     "vercel:build": "~/.bun/bin/bun lang:build && ~/.bun/bin/bun db:push && ~/.bun/bin/bun vite:build",
     "storybook": "cross-env STORYBOOK=true storybook dev -p 6006 -s ../static",
     "storybook:build": "cross-env STORYBOOK=true storybook build -s ../static",
-    "storybook:serve": "bun x serve storybook-static"
+    "storybook:serve": "bun x serve storybook-static",
+    "deps:update": "bun x npm-check-updates -ui"
   },
   "devDependencies": {
-    "@inlang/sdk-js": "^0.11.8",
     "@storybook/addon-actions": "^7.5.3",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
@@ -67,20 +67,17 @@
     "@felte/validator-zod": "^1.0.17",
     "@fontsource/montserrat": "^5.0.15",
     "@fontsource/montserrat-alternates": "^5.0.8",
+    "@inlang/paraglide-js": "1.0.0-prerelease.6",
     "@supabase/auth-helpers-sveltekit": "^0.10.7",
     "@supabase/supabase-js": "^2.38.4",
     "@trpc/client": "^10.43.1",
     "@trpc/server": "^10.43.1",
-    "cross-env": "^7.0.3",
     "daisyui": "^3.9.4",
-    "dotenv": "^16.3.1",
-    "dotenv-cli": "^7.3.0",
     "drizzle-orm": "^0.28.6",
     "felte": "^1.2.12",
     "postgres": "^3.4.3",
     "superjson": "^2.2.0",
     "trpc-sveltekit": "^3.5.22",
-    "zod": "^3.22.4",
-    "@inlang/paraglide-js": "1.0.0-prerelease.6"
+    "zod": "^3.22.4"
   }
 }
