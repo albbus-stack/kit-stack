@@ -6,4 +6,5 @@ tasks:
       bun install
       bun db:generate
       cp .env.local.example .env.local
+      bun lang:build
       bun env:sync
