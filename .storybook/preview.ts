@@ -1,7 +1,8 @@
 import type { Preview } from '@storybook/svelte';
-import { withThemeByDataAttribute } from "@storybook/addon-styling";
+import { withThemeByDataAttribute } from '@storybook/addon-styling';
 
 import '../src/global.css';
+import '@fontsource/montserrat-alternates';
 
 const preview: Preview = {
 	parameters: {
@@ -12,19 +13,7 @@ const preview: Preview = {
 				date: /Date$/
 			}
 		}
-	},
-
-	decorators: [
-		//@ts-ignore
-		withThemeByDataAttribute({
-			themes: {
-				light: "light",
-				dark: "dark",
-			},
-			defaultTheme: "dark",
-			attributeName: "data-theme",
-	  	}),
-	]
+	}
 };
 
 export default preview;

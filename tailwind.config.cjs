@@ -7,19 +7,32 @@ export default {
 		extend: {}
 	},
 	plugins: [require('daisyui')],
-	darkMode: process.env?.STORYBOOK === 'true' ? ['class', '[data-theme="dark"]'] : undefined,
 	daisyui: {
 		themes: [
 			{
 				light: {
-					...require('daisyui/src/theming/themes')['[data-theme=light]'],
+					...require('daisyui/src/theming/themes')['light'],
 					primary: '#f5602f',
-					'primary-content': '#ffffff'
+					'primary-content': '#ffffff',
+					'secondary-content': '#ffffff',
+					'accent-content': '#ffffff',
+					'success-content': '#ffffff',
+					'info-content': '#ffffff',
+					'warning-content': '#ffffff',
+					'error-content': '#ffffff',
 				},
 				dark: {
-					...require('daisyui/src/theming/themes')['[data-theme=dark]'],
-					primary: '#f5602f'
+					...require('daisyui/src/theming/themes')['dark'],
+					primary: '#f5602f',
+					'primary-content': '#ffffff',
+					'secondary-content': '#ffffff',
+					'accent-content': '#ffffff',
+					'success-content': '#ffffff',
+					'info-content': '#ffffff',
+					'warning-content': '#ffffff',
+					'error-content': '#ffffff',
 				}
+
 			}
 		]
 	}
