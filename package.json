@@ -39,7 +39,7 @@
     "@storybook/testing-library": "^0.2.2",
     "@stripe/stripe-js": "^2.2.1",
     "@sveltejs/adapter-vercel": "^3.1.0",
-    "@sveltejs/kit": "^1.27.6",
+    "@sveltejs/kit": "^1.30.3",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "autoprefixer": "^10.4.16",
