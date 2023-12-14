@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
+  "engines": {
+    "node" : ">=20.0.0" 
+  }, 
   "scripts": {
     "dev": "bun db:generate && bun vite:dev",
     "build": "bun lang:build && bun db:generate && bun vite:build",
