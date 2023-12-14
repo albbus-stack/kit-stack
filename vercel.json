@@ -1,6 +1,6 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"installCommand": "curl -fsSL https://bun.sh/install | bash && ~/.bun/bin/bun install --frozen-lockfile",
+	"installCommand": "curl -fsSL https://bun.sh/install | bash && ~/.bun/bin/bun install",
 	"devCommand": "~/.bun/bin/bun dev",
 	"buildCommand": "~/.bun/bin/bun vercel:build",
 	"framework": "sveltekit",
