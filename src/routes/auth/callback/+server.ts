@@ -13,12 +13,12 @@ export const GET: RequestHandler = async ({ url, locals: { supabase } }) => {
 
 	const userData = (await supabase.auth.getUser()).data;
 
-	if (!userData?.user?.email) throw redirect(302, '/');
+	if (!userData?.user?.email) redirect(302, '/');
 
 	await db.insert(user).values({
 		email: userData.user.email,
 		id: userData.user.id
 	});
 
-	throw redirect(301, '/');
+	redirect(301, '/');
 };
