@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	scrollbar-width: thin !important;
+}
+
 body {
 	font-family: 'Montserrat Alternates', sans-serif;
 	overflow-x: hidden;
