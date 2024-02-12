@@ -21,7 +21,7 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"env:sync": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"vercel:build": "~/.bun/bin/bun lang:build && ~/.bun/bin/bun db:push && ~/.bun/bin/bun vite:build",
+		"vercel:build": "~/.bun/bin/bun env:sync && ~/.bun/bin/bun db:push && ~/.bun/bin/bun vite:build",
 		"storybook": "STORYBOOK=true storybook dev -p 6006 -s ../static",
 		"storybook:build": "STORYBOOK=true storybook build -s ../static",
 		"storybook:serve": "bun x serve storybook-static",
