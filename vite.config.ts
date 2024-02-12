@@ -10,10 +10,10 @@ export default defineConfig({
 		noExternal: ['@inlang/paraglide-js']
 	},
 	plugins: [
-		sveltekit(),
 		paraglide({
 			project: './project.inlang',
 			outdir: './src/paraglide'
-		})
+		}),
+		sveltekit()
 	]
 });

@@ -5,7 +5,7 @@
 	import { afterNavigate, invalidate } from "$app/navigation";
 	import { fly } from "svelte/transition";
 	import { cubicIn, cubicOut } from "svelte/easing";
-	import { setLanguageTag, onSetLanguageTag, type AvailableLanguageTag } from "../paraglide/runtime";
+	import { setLanguageTag, onSetLanguageTag, type AvailableLanguageTag } from "$paraglide/runtime";
 	import { browser } from "$app/environment";
 	import { onMount } from 'svelte';
 	import { disableScrollHandling } from '$app/navigation';
@@ -50,11 +50,11 @@
 	</div>
 {:else}
 	{#key data.url + languageTag}
-		<div
+			<div
 			in:fly={{ easing: cubicOut, duration: 250, delay: 350, y: 10 }}
 			out:fly={{ easing: cubicIn, duration: 250, y: -10 }}
-		>
-			<slot />
-		</div>
+			>
+				<slot />
+			</div>
 	{/key}
 {/if}
