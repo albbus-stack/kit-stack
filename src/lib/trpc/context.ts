@@ -6,7 +6,7 @@ import Stripe from 'stripe';
 
 // Initialize stripe
 const stripe = new Stripe(SECRET_STRIPE_KEY, {
-	apiVersion: '2023-10-16'
+	apiVersion: '2024-04-10'
 });
 
 export async function createContext(event: RequestEvent) {
