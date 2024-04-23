@@ -1,6 +1,9 @@
 <script>
 	import { page } from '$app/stores';
+	import Seo from 'sk-seo';
 </script>
+
+<Seo title={$page.error?.message || ''} description="Error page" />
 
 <div class="flex h-screen flex-col items-center justify-center gap-10">
 	<img src="/logo.svg" alt="kit-stack logo" class="mx-auto rounded-2xl shadow-lg" />

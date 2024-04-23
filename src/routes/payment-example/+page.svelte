@@ -9,6 +9,7 @@
 	import { TRPCClientError } from '@trpc/client';
 	import type { PaymentIntent } from '$lib/trpc/routes/payments';
 	import { ArrowLeft, Icon } from 'svelte-hero-icons';
+	import Seo from 'sk-seo';
 
 	let paymentAmount = 200;
 
@@ -62,6 +63,8 @@
 		}
 	}
 </script>
+
+<Seo title="Payment Example" description="An example payment page" />
 
 <a href="/" role="button" class="btn btn-primary m-10 mb-5">
 	<Icon class="w-7" src={ArrowLeft} />

@@ -2,9 +2,12 @@
 	import LoginForm from '$lib/components/LoginForm.svelte';
 	import TrpcButtons from '$lib/components/TrpcButtons.svelte';
 	import InternationalizationExample from '$lib/components/InternationalizationExample.svelte';
+	import Seo from 'sk-seo';
 
 	export let data;
 </script>
+
+<Seo title="Kit-Stack Demo" description="Demo webpage for Kit-Stack" />
 
 <img src="/logo.svg" alt="kit-stack logo" class="mx-auto mt-16 rounded-2xl shadow-lg" />
 

@@ -3,8 +3,8 @@
 	import { trpc } from '$lib/trpc/client';
 	import { TRPCClientError } from '@trpc/client';
 	import { Icon, ArrowLeft } from 'svelte-hero-icons';
-	import { onMount } from 'svelte';
 	import type { Post } from '$lib/db/drizzle/schema';
+	import Seo from 'sk-seo';
 
 	let loading = false;
 	let error = '';
@@ -80,6 +80,8 @@
 		loadPosts();
 	}
 </script>
+
+<Seo title="Posts Example" description="An example posts page" />
 
 <div class="card w-full flex-col items-center justify-center gap-10 p-10">
 	<a href="/" role="button" class="btn btn-primary self-start">
