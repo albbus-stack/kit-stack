@@ -30,7 +30,7 @@
 | 🎨 **DaisyUI**: Component Library | 🖌 **Storybook**: UI Testing Tool |
 | 💳 **Stripe**: Payments API | 📚 **Inlang**: Internationalization Library |
 | 📝 **Felte**: Form Validation | 📃 **Prettier & ESLint**: Code Formatting |
-| 🤖 **Vercel**: Deploy with CI | 🍞 **Bun**: Fast package manager |
+| 🤖 **Vercel**: Deploy with CI | 🍞 **Bun**: Fast Package Manager |
 |  |  |
   
 ## 🔌 Features
