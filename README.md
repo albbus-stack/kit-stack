@@ -1,5 +1,5 @@
 <p align="center">
-     <img src="https://svgshare.com/i/vcw.svg" height="250"/>
+     <img src="https://raw.githubusercontent.com/albbus-stack/kit-stack/refs/heads/main/static/logo.svg" height="250"/>
      </br> </br>
      A svelte fullstack starter kit heavily inspired by <a href="https://create.t3.gg/">create-t3-app</a> with various added bonuses
      </br> </br>
